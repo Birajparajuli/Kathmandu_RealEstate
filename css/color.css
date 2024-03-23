@@ -1,0 +1,43 @@
+/*==================================
+Theme Color All Codes Variable
+==================================*/
+:root {
+  --theme-ordinary-color: #022b60;
+}
+:root {
+  --theme-primary-color: #ff9202;
+}
+:root {
+  --theme-secondary-color: #022b60;
+}
+:root {
+  --theme-white-color: #fff;
+}
+:root {
+  --theme-light-color: #f8f8f8;
+}
+:root {
+  --theme-gray-color: #f5f5f5;
+}
+:root {
+  --text-light-color: #a3a7af;
+}
+:root {
+  --theme-primary-opacity-color: #ff9102be;
+}
+:root {
+  --theme-secondary-opacity-color: #022b60d0;
+}
+:root {
+  --theme-white-opacity-color: rgba(255, 255, 255, 0.3);
+}
+:root {
+  --theme-dark-opacity-color: rgba(0, 0, 0, 0.5);
+}
+
+:root {
+  --theme-ordinary-font: "Inter", sans-serif;
+}
+:root {
+  --theme-highlight-font: "Inter", sans-serif;
+}
