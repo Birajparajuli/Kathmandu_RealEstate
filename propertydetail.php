@@ -21,11 +21,6 @@ include("config.php");
 <meta name="author" content="Unicoder">
 <link rel="shortcut icon" href="images/favicon.ico">
 
-<!--	Fonts
-	========================================================-->
-<link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -62,25 +57,7 @@ include("config.php");
 		<?php include("include/header.php");?>
         <!--	Header end  -->
         
-        <!--	Banner   --->
-        <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h2 class="page-name float-left text-white text-uppercase mt-1 mb-0"><b>Property Detail</b></h2>
-                    </div>
-                    <div class="col-md-6">
-                        <nav aria-label="breadcrumb" class="float-left float-md-right">
-                            <ol class="breadcrumb bg-transparent m-0 p-0">
-                                <li class="breadcrumb-item text-white"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Property Detail</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-         <!--	Banner   --->
+        
 
 		
         <div class="full-row">
@@ -224,7 +201,7 @@ include("config.php");
 					<?php } ?>
 					
                     <div class="col-lg-4">
-                        <!-- <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Send Message</h4>
+                        <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Contact Seller</h4>
                         <form method="post" action="#">
                             <div class="row">
                                 <div class="col-md-12">
@@ -250,36 +227,12 @@ include("config.php");
 								
                                 <div class="col-md-12">
                                     <div class="form-group mt-4">
-                                        <button type="submit" class="btn btn-success w-100">Search Property</button>
+                                        <button type="submit" class="btn btn-primary btn-custom w-100">Send Message</button>
                                     </div>
                                 </div>
                             </div>
-                        </form> -->
-                        <h4 class="double-down-line-left text-secondary position-relative pb-4 my-4">Instalment Calculator</h4>
-                        <form class="d-inline-block w-100" action="calc.php" method="post">
-                            <label class="sr-only">Property Amount</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">₹</div>
-                                </div>
-                                <input type="text" class="form-control" name="amount" placeholder="Property Price">
-                            </div>
-                            <label class="sr-only">Month</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-                                </div>
-                                <input type="text" class="form-control" name="month" placeholder="Duration Year">
-                            </div>
-                            <label class="sr-only">Interest Rate</label>
-                            <div class="input-group mb-2 mr-sm-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">%</div>
-                                </div>
-                                <input type="text" class="form-control" name="interest" placeholder="Interest Rate">
-                            </div>
-                            <button type="submit" value="submit" name="calc" class="btn btn-danger mt-4">Calclute Instalment</button>
                         </form>
+                        
                         <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Featured Property</h4>
                         <ul class="property_list_widget">
 							
@@ -325,9 +278,7 @@ include("config.php");
 		<!--	Footer   start-->
         
         
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
+       
     </div>
 </div>
 <!-- Wrapper End --> 

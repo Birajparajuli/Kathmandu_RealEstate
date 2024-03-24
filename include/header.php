@@ -15,10 +15,9 @@
 								<?php  if(isset($_SESSION['uemail']))
 								{ ?>
 								<a href="logout.php">Logout</a>&nbsp;&nbsp;<?php } else { ?>
-								<a href="login.php">Login</a>&nbsp;&nbsp;
-								
-								| </li>
-								<li><i class="fas fa-user-plus text-success mr-1"></i><a href="register.php"> Register</li><?php } ?>
+								<a href="login.php" class=" btn-danger btn-custom px-4 py-2">Post Ads</a>&nbsp;&nbsp;
+								</li>
+								<?php } ?>
 								</ul>
                             </div>
                         </div>

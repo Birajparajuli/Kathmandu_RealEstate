@@ -85,7 +85,7 @@ include("config.php");
                                     </div>
                                     <div class="col-md-4 col-lg-2">
                                         <div class="form-group">
-                                            <button type="submit" name="filter" class="btn btn-custom btn-success w-100">Search Property</button>
+                                            <button type="submit" name="filter" class="btn btn-custom btn-primary w-100">Search Property</button>
                                         </div>
                                     </div>
                                 </div>
@@ -95,10 +95,10 @@ include("config.php");
                 </div>
             </div>
         </div>
-        <!--	Banner End  -->
+        <!--Banner End  -->
         
 		
-        <!--	Recent Properties  -->
+        <!--Recent Properties  -->
         <div class="full-row">
             <div class="container">
                 <div class="row">
@@ -117,13 +117,13 @@ include("config.php");
 									?>
 								
                                     <div class="col-md-6 col-lg-4">
-                                        <div class="featured-thumb hover-zoomer mb-4">
+                                        <div class="featured-thumb hover-zoomer mb-4 property-card card">
                                             <div class="overlay-black overflow-hidden position-relative" id="myCard"> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage" style="height:100%;" >
-                                                <div class="featured bg-success text-white">New</div>
-                                                <div class="sale bg-success text-white text-capitalize">For <?php echo $row['5'];?></div>
-                                                <div class="price text-primary"><b>₹<?php echo $row['13'];?> </b><span class="text-white"><?php echo $row['12'];?> Sqft</span></div>
+                                                <div class="featured bg-primary text-white">New</div>
+                                                <div class="sale bg-primary text-white text-capitalize">For <?php echo $row['5'];?></div>
+                                                <div class="price text-primary"><b>Rs.<?php echo $row['13'];?> </b><span class="text-white"><?php echo $row['12'];?> Sqft</span></div>
                                             </div>
-                                            <div class="99999 shadow-one">
+                                            <div class=" shadow-one">
                                                 <div class="p-3">
                                                     <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h5>
                                                     <span class="location text-capitalize"><i class="fas fa-map-marker-alt text-success"></i> <?php echo $row['14'];?></span> </div>
