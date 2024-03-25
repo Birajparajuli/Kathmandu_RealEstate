@@ -4,7 +4,6 @@
                     <div class="row">
                         <div class="col-md-8">
                             <ul class="top-contact list-text-white  d-table">
-                                
                                 <li><a href="#"><i class="fas fa-envelope text-success mr-1"></i>realestateNepal@gmail.com</a></li>
                             </ul>
                         </div>
@@ -15,7 +14,7 @@
 								<?php  if(isset($_SESSION['uemail']))
 								{ ?>
 								<a href="logout.php">Logout</a>&nbsp;&nbsp;<?php } else { ?>
-								<a href="login.php" class=" btn-danger btn-custom px-4 py-2">Post Ads</a>&nbsp;&nbsp;
+								<a href="login.php" class=" btn-secondary btn-custom px-4 py-2">Post Ads</a>&nbsp;&nbsp;
 								</li>
 								<?php } ?>
 								</ul>
@@ -34,14 +33,8 @@
                                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                     <ul class="navbar-nav mr-0">
                                         <li class="nav-item dropdown"> <a class="nav-link" href="index.php" role="button" aria-haspopup="true" aria-expanded="false">Home</a></li>
-										
-		
-										
                                         <li class="nav-item"> <a class="nav-link" href="property.php">Properties</a> </li>
-                                        
                                         <li class="nav-item"> <a class="nav-link" href="agent.php">Agents</a> </li>
-
-										
 										<?php  if(isset($_SESSION['uemail']))
 										{ ?>
 										<li class="nav-item dropdown">
@@ -56,11 +49,7 @@
 										<?php } else { ?>
 										<li class="nav-item"> <a class="nav-link" href="login.php">Login/Register</a> </li>
 										<?php } ?>
-										
                                     </ul>
-                                    
-									
-									
                                 </div>
                             </nav>
                         </div>

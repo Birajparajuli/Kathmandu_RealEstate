@@ -2,19 +2,16 @@
 session_start();
 require("config.php");
 ////code
- 
 if(!isset($_SESSION['auser']))
 {
 	header("location:index.php");
 }
-
 //// code insert
 //// add code
 $error="";
 $msg="";
 if(isset($_POST['add']))
 {
-	
 	$title=$_POST['title'];
 	$ptype=$_POST['ptype'];
 	$bhk=$_POST['bhk'];
@@ -32,42 +29,32 @@ if(isset($_POST['add']))
 	$state=$_POST['state'];
 	$status=$_POST['status'];
 	$uid=$_POST['uid'];
-	
-	
 	$totalfloor=$_POST['totalfl'];
-	
 	$aimage=$_FILES['aimage']['name'];
 	$aimage1=$_FILES['aimage1']['name'];
 	$aimage2=$_FILES['aimage2']['name'];
 	$aimage3=$_FILES['aimage3']['name'];
 	$aimage4=$_FILES['aimage4']['name'];
-	
 	$fimage=$_FILES['fimage']['name'];
 	$fimage1=$_FILES['fimage1']['name'];
 	$fimage2=$_FILES['fimage2']['name'];
-
 	$isFeatured=$_POST['isFeatured'];
-	
 	$temp_name  =$_FILES['aimage']['tmp_name'];
 	$temp_name1 =$_FILES['aimage1']['tmp_name'];
 	$temp_name2 =$_FILES['aimage2']['tmp_name'];
 	$temp_name3 =$_FILES['aimage3']['tmp_name'];
 	$temp_name4 =$_FILES['aimage4']['tmp_name'];
-	
 	$temp_name5 =$_FILES['fimage']['tmp_name'];
 	$temp_name6 =$_FILES['fimage1']['tmp_name'];
 	$temp_name7 =$_FILES['fimage2']['tmp_name'];
-	
 	move_uploaded_file($temp_name,"property/$aimage");
 	move_uploaded_file($temp_name1,"property/$aimage1");
 	move_uploaded_file($temp_name2,"property/$aimage2");
 	move_uploaded_file($temp_name3,"property/$aimage3");
 	move_uploaded_file($temp_name4,"property/$aimage4");
-	
 	move_uploaded_file($temp_name5,"property/$fimage");
 	move_uploaded_file($temp_name6,"property/$fimage1");
 	move_uploaded_file($temp_name7,"property/$fimage2");
-	
 	$sql="INSERT INTO property (title,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage,totalfloor,isFeatured)
 	VALUES('$title','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
 	'$loc','$city','$state','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor','$isFeatured')";
@@ -75,7 +62,6 @@ if(isset($_POST['add']))
 	if($result)
 		{
 			$msg="<p class='alert alert-success'>Property Inserted Successfully</p>";
-					
 		}
 		else
 		{
@@ -89,38 +75,24 @@ if(isset($_POST['add']))
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
         <title>Add Property | Property</title>
-		
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
 		<!-- Fontawesome CSS -->
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="assets/css/feathericon.min.css">
-		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
-		<!--[if lt IE 9]>
-			<script src="assets/js/html5shiv.min.js"></script>
-			<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
     </head>
     <body>
-
-		
 			<!-- Header -->
 			<?php include("header.php"); ?>
 			<!-- /Sidebar -->
-			
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-				
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
@@ -134,7 +106,6 @@ if(isset($_POST['add']))
 						</div>
 					</div>
 					<!-- /Page Header -->
-					
 					<div class="row">
 						<div class="col-md-12">
 							<div class="card">
@@ -146,7 +117,6 @@ if(isset($_POST['add']))
 									<h5 class="card-title">Property Detail</h5>
 									<?php echo $error; ?>
 									<?php echo $msg; ?>
-									
 										<div class="row">
 											<div class="col-xl-12">
 												<div class="form-group row">
@@ -155,8 +125,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="title" required placeholder="Enter Title">
 													</div>
 												</div>
-												
-												
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -195,7 +163,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="kitc" required placeholder="Enter Kitchen (only no 1 to 10)">
 													</div>
 												</div>
-												
 											</div>   
 											<div class="col-xl-6">
 												<div class="form-group row mb-3">
@@ -207,9 +174,7 @@ if(isset($_POST['add']))
 															<option value="1 BHK">1 BHK</option>
 															<option value="2 BHK">2 BHK</option>
 															<option value="3 BHK">3 BHK</option>
-															<option value="4 BHK">4 BHK</option>
-															<option value="5 BHK">5 BHK</option>
-															
+															<option value="4 BHK">4 BHK</option>	
 														</select>
 													</div>
 												</div>
@@ -231,7 +196,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="hall" required placeholder="Enter Hall  (only no 1 to 10)">
 													</div>
 												</div>
-												
 											</div>
 										</div>
 										<h4 class="card-title">Price & Location</h4>
@@ -253,11 +217,6 @@ if(isset($_POST['add']))
 															<option value="5th Floor">8th Floor</option>
 															<option value="5th Floor">9th Floor</option>
 															<option value="5th Floor">10th Floor</option>
-															<option value="5th Floor">11th Floor</option>
-															<option value="5th Floor">12th Floor</option>
-															<option value="5th Floor">13th Floor</option>
-															<option value="5th Floor">14th Floor</option>
-															<option value="5th Floor">15th Floor</option>	
 														</select>
 													</div>
 												</div>
@@ -297,11 +256,6 @@ if(isset($_POST['add']))
 															<option value="8 Floor">8 Floor</option>
 															<option value="9 Floor">9 Floor</option>
 															<option value="10 Floor">10 Floor</option>
-															<option value="11 Floor">11 Floor</option>
-															<option value="12 Floor">12 Floor</option>
-															<option value="13 Floor">13 Floor</option>
-															<option value="14 Floor">14 Floor</option>
-															<option value="15 Floor">15 Floor</option>
 														</select>
 													</div>
 												</div>
@@ -317,16 +271,11 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="loc" required placeholder="Enter Address">
 													</div>
 												</div>
-												
 											</div>
 										</div>
-										
-										
-												
 										<h4 class="card-title">Image & Status</h4>
 										<div class="row">
 											<div class="col-xl-6">
-												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image</label>
 													<div class="col-lg-9">
@@ -363,7 +312,6 @@ if(isset($_POST['add']))
 												</div>
 											</div>
 											<div class="col-xl-6">
-												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image 1</label>
 													<div class="col-lg-9">
@@ -396,9 +344,7 @@ if(isset($_POST['add']))
 												</div>
 											</div>
 										</div>
-
 										<hr>
-
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group row">
@@ -413,21 +359,15 @@ if(isset($_POST['add']))
 												</div>
 											</div>
 										</div>
-
-										
 											<input type="submit" value="Submit" class="btn btn-primary"name="add" style="margin-left:200px;">
-										
 								</div>
 								</form>
 							</div>
 						</div>
 					</div>
-				
 				</div>			
 			</div>
 			<!-- /Main Wrapper -->
-
-		
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
 		<script src="assets/plugins/tinymce/tinymce.min.js"></script>
@@ -435,13 +375,9 @@ if(isset($_POST['add']))
 		<!-- Bootstrap Core JS -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-		
 		<!-- Slimscroll JS -->
         <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		
     </body>
-
 </html>

@@ -3,10 +3,8 @@ Author       : Dreamguys
 Template Name: Ventura - Bootstrap Admin Template
 Version      : 1.0
 */
-
 /*============================
  [Table of CSS]
-
 1. General
 2. Table
 3. Helper Class
@@ -32,15 +30,10 @@ Version      : 1.0
 23. Profile
 24. Template Options
 25. Responsive
-
 ========================================*/
-
 /*-----------------
 	1. General
 -----------------------*/
-
-@import url("https://fonts.googleapis.com/css?family=Mada:400,500,600,700&amp;display=swap");
-
 @font-face {
   font-family: "Material Icons";
   font-style: normal;
@@ -57,20 +50,19 @@ html {
 body {
   background-color: #f8f9fa;
   color: #333;
-  font-family: "Mada", sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 1rem;
   height: 100%;
   line-height: 1.5;
   overflow-x: hidden;
 }
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Mada", sans-serif;
+  font-family: "Inter", sans-serif;
   margin-top: 0;
 }
 a:hover,
@@ -99,7 +91,6 @@ input:-webkit-autofill:focus {
 .form-control.form-control-sm {
   height: calc(1.5em + 0.5rem + 2px);
 }
-
 .form-control.form-control-lg {
   height: calc(1.5em + 1rem + 2px);
 }
@@ -169,11 +160,9 @@ textarea.form-control {
 .font-weight-600 {
   font-weight: 600;
 }
-
 /*-----------------
 	2. Table
 -----------------------*/
-
 .table {
   color: #333;
   max-width: 100%;
@@ -292,11 +281,9 @@ table.table td h2 span {
   padding: 1rem 0.75rem;
   white-space: nowrap;
 }
-
 /*-----------------
 	3. Helper Class
 -----------------------*/
-
 .p-20 {
   padding: 20px !important;
 }
@@ -372,11 +359,9 @@ table.table td h2 span {
   right: 15px;
   top: 10px;
 }
-
 /*-----------------
 	4. Bootstrap Classes
 -----------------------*/
-
 .btn.focus,
 .btn:focus {
   box-shadow: unset;
@@ -898,6 +883,7 @@ button.bg-danger:hover {
   border-radius: 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.875rem;
+  border-radius: 6px;
 }
 .card-body {
   padding: 1.5rem;
@@ -964,11 +950,9 @@ button.bg-danger:hover {
   background-color: rgba(40, 52, 71, 0.12) !important;
   color: #283447 !important;
 }
-
 /*-----------------
 	5. Select2
 -----------------------*/
-
 .select2-container .select2-selection--single {
   border: 1px solid #ddd;
   height: 40px;
@@ -1021,11 +1005,9 @@ button.bg-danger:hover {
   border: 1px solid #ddd;
   min-height: 40px;
 }
-
 /*-----------------
 	6. Nav Tabs
 -----------------------*/
-
 .nav-tabs {
   border-bottom: 1px solid #e6e6e6;
 }
@@ -1178,11 +1160,9 @@ button.bg-danger:hover {
 .nav-tabs-justified.nav-tabs-top > li > a:focus {
   border-width: 2px 0 0 0;
 }
-
 /*-----------------
 	7. Components
 -----------------------*/
-
 .section-header {
   margin-bottom: 1.875rem;
 }
@@ -1230,9 +1210,7 @@ button.bg-danger:hover {
   padding-left: 3px;
   padding-right: 3px;
 }
-
 /* Avatar */
-
 .avatar {
   position: relative;
   display: inline-block;
@@ -1395,13 +1373,11 @@ button.bg-danger:hover {
 .avatar-group .avatar:hover {
   z-index: 1;
 }
-
 /*-----------------
 	8. Header
 -----------------------*/
-
 .header {
-  background: #ffbc34;
+  background: #022b60;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   left: 0;
   position: fixed;
@@ -1627,9 +1603,7 @@ html.menu-opened {
 html.menu-opened body {
   overflow: hidden;
 }
-
 /* Search */
-
 .top-nav-search {
   float: left;
   margin-left: 15px;
@@ -1677,13 +1651,11 @@ html.menu-opened body {
   left: 0;
   position: absolute;
 }
-
 /*-----------------
 	9. Sidebar
 -----------------------*/
-
 .sidebar {
-  background-color: #3a4352;
+  background-color: #022b60;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   bottom: 0;
   left: 0;
@@ -1865,11 +1837,9 @@ html.menu-opened body {
 .sidebar-menu li a > .badge {
   color: #fff;
 }
-
 /*-----------------
 	10. Content
 -----------------------*/
-
 .main-wrapper {
   width: 100%;
   height: 100vh;
@@ -1907,11 +1877,9 @@ html.menu-opened body {
   color: #333;
   margin-bottom: 5px;
 }
-
 /*-----------------
 	11. Login
 -----------------------*/
-
 .login-body {
   display: table;
   height: 100vh;
@@ -2037,11 +2005,9 @@ html.menu-opened body {
   top: 0;
   width: 42px;
 }
-
 /*-----------------
 	12. Lock Screen
 -----------------------*/
-
 .lock-user {
   margin-bottom: 20px;
   text-align: center;
@@ -2050,11 +2016,9 @@ html.menu-opened body {
   margin-bottom: 15px;
   width: 100px;
 }
-
 /*-----------------
 	13. Notifications
 -----------------------*/
-
 .notifications {
   padding: 0;
 }
@@ -2172,11 +2136,9 @@ html.menu-opened body {
 .noti-time {
   margin: 0;
 }
-
 /*-----------------
 	14. Dashboard
 -----------------------*/
-
 .dash-widget-icon {
   align-items: center;
   border-radius: 4px;
@@ -2250,11 +2212,9 @@ html.menu-opened body {
   color: #333;
   font-weight: 600;
 }
-
 /*-----------------
 	15. Invoice
 -----------------------*/
-
 .add-btn {
   border: 1px solid transparent;
   border-radius: 20px;
@@ -2315,11 +2275,9 @@ html.menu-opened body {
   max-height: 100px;
   width: auto;
 }
-
 /*-----------------
 	16. Calendar
 -----------------------*/
-
 .calendar-events {
   border: 1px solid transparent;
   cursor: move;
@@ -2450,11 +2408,9 @@ html.menu-opened body {
   min-width: 200px;
   padding: 10px 20px;
 }
-
 /*-----------------
 	17. Inbox
 -----------------------*/
-
 .dropdown-action {
   margin-bottom: 5px;
 }
@@ -2541,11 +2497,9 @@ table.table-inbox tbody tr.checked {
   font-size: 16px !important;
   margin-right: 5px;
 }
-
 /*-----------------
 	18. Mail View
 -----------------------*/
-
 .attachments {
   list-style: none;
   margin: 0;
@@ -2654,11 +2608,9 @@ table.table-inbox tbody tr.checked {
   font-weight: 600;
   padding: 8px 15px;
 }
-
 /*-----------------
 	19. Error
 -----------------------*/
-
 .error-page {
   align-items: center;
   color: #1f1f1f;
@@ -2693,11 +2645,9 @@ table.table-inbox tbody tr.checked {
   min-width: 200px;
   padding: 10px 20px;
 }
-
 /*-----------------
 	20. Chat
 -----------------------*/
-
 .chat-window {
   border: 1px solid #e0e3e4;
   display: flex;
@@ -3102,11 +3052,9 @@ table.table-inbox tbody tr.checked {
 .msg-typing span:nth-of-type(1) {
   animation: 1s blink infinite 0.33333s;
 }
-
 .msg-typing span:nth-of-type(2) {
   animation: 1s blink infinite 0.66666s;
 }
-
 .msg-typing span:nth-of-type(3) {
   animation: 1s blink infinite 0.99999s;
 }
@@ -3365,7 +3313,6 @@ table.table-inbox tbody tr.checked {
 .chat-msg-actions > a:hover {
   color: #2c80ff;
 }
-
 @keyframes blink {
   50% {
     opacity: 1;
@@ -3393,11 +3340,9 @@ table.table-inbox tbody tr.checked {
   top: 0;
   width: 100%;
 }
-
 /*-----------------
 	21. Product
 -----------------------*/
-
 .product {
   -moz-transition: all 0.5s;
   -webkit-transition: all 0.5s;
@@ -3486,11 +3431,9 @@ table.table-inbox tbody tr.checked {
   padding: 0;
   display: block;
 }
-
 /*-----------------
 	22. Product Details
 -----------------------*/
-
 .product-content {
   position: relative;
 }
@@ -3604,11 +3547,9 @@ table.table-inbox tbody tr.checked {
 .rating i + i {
   margin-left: 2px;
 }
-
 /*-----------------
 	23. Profile
 -----------------------*/
-
 .profile-header {
   background: #fff;
   border: 2px solid #d9d9d9;
@@ -3692,11 +3633,9 @@ table.table-inbox tbody tr.checked {
   z-index: 2;
   position: relative;
 }
-
 /*-----------------
 	24. Template Options
 -----------------------*/
-
 .skin-settings {
   z-index: 999;
   position: fixed;
@@ -3788,11 +3727,9 @@ table.table-inbox tbody tr.checked {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-
 /*-----------------
 	25. Responsive
 -----------------------*/
-
 @media only screen and (min-width: 768px) {
   .avatar-xxl {
     width: 8rem;
@@ -3813,7 +3750,6 @@ table.table-inbox tbody tr.checked {
     border-width: 4px;
   }
 }
-
 @media only screen and (min-width: 992px) {
   #toggle_btn {
     align-items: center;
@@ -3880,7 +3816,6 @@ table.table-inbox tbody tr.checked {
     margin-left: 78px;
   }
 }
-
 @media only screen and (max-width: 1400px) {
   .chat-window
     .chat-cont-left
@@ -4008,7 +3943,6 @@ table.table-inbox tbody tr.checked {
     right: 0;
   }
 }
-
 @media only screen and (max-width: 767.98px) {
   body {
     font-size: 0.9375rem;
@@ -4144,7 +4078,6 @@ table.table-inbox tbody tr.checked {
     font-size: 16px;
   }
 }
-
 @media only screen and (max-width: 575.98px) {
   .card {
     margin-bottom: 0.9375rem;
@@ -4220,7 +4153,6 @@ table.table-inbox tbody tr.checked {
     display: none;
   }
 }
-
 @media only screen and (max-width: 479px) {
   .add-btn {
     font-size: 14px;

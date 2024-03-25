@@ -3,24 +3,13 @@ ini_set('session.cache_limiter','public');
 session_cache_limiter(false);
 session_start();
 include("config.php");
-                   
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="description" content="Real Estate PHP">
-<meta name="keywords" content="">
-<meta name="author" content="Unicoder">
-<link rel="shortcut icon" href="images/favicon.ico">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -32,62 +21,37 @@ include("config.php");
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
-        
-
-		
         <div class="full-row">
             <div class="container">
                 <div class="row">
-				
 					<?php
 						$id=$_REQUEST['pid']; 
 						$query=mysqli_query($con,"SELECT property.*, user.* FROM `property`,`user` WHERE property.uid=user.uid and pid='$id'");
 						while($row=mysqli_fetch_array($query))
 						{
 					  ?>
-				  
                     <div class="col-lg-8">
-
                         <div class="row">
                             <div class="col-md-12">
                                 <div id="single-property" style="width:1200px; height:700px; margin:30px auto 50px;"> 
                                     <!-- Slide 1-->
                                     <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['18'];?>" class="ls-bg" alt="" /> </div>
-                                    
                                     <!-- Slide 2-->
                                     <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['19'];?>" class="ls-bg" alt="" /> </div>
-                                    
                                     <!-- Slide 3-->
                                     <div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['20'];?>" class="ls-bg" alt="" /> </div>
-									
 									<!-- Slide 4-->
 									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['21'];?>" class="ls-bg" alt="" /> </div>
-									
 									<!-- Slide 5-->
 									<div class="ls-slide" data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;"> <img width="1920" height="1080" src="admin/property/<?php echo $row['22'];?>" class="ls-bg" alt="" /> </div>
                                 </div>
@@ -117,7 +81,6 @@ include("config.php");
                             </div>
                             <h4 class="text-secondary my-4">Description</h4>
                             <p><?php echo $row['2'];?></p>
-                            
                             <h5 class="mt-5 mb-4 text-secondary">Property Summary</h5>
                             <div  class="table-striped font-14 pb-2">
                                 <table class="w-100">
@@ -140,13 +103,9 @@ include("config.php");
                                             <td>State :</td>
                                             <td class="text-capitalize"><?php echo $row['16'];?></td>
                                         </tr>
-                                        
                                     </tbody>
                                 </table>
                             </div>
-                            
-                             
-							
                             <h5 class="mt-5 mb-4 text-secondary">Floor Plans</h5>
                             <div class="accordion" id="accordionExample">
                                 <button class="bg-gray hover-bg-success hover-text-white text-ordinary py-3 px-4 mb-1 w-100 text-left rounded position-relative" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Floor Plans </button>
@@ -167,7 +126,6 @@ include("config.php");
                                         echo "<h1>Property Booked!. </h1>";
                                     }
                             ?>
- 
                             <button class="btn" style="background-color:#04AA6D; border-radius: 5px; align: right; " onclick="location.href='propertydetail.php?pid=<?php echo $_GET['pid'] ?>&sts=<?php echo 'book';?>'">Book Property</button>
                             <h5 class="mt-5 mb-4 text-secondary double-down-line-left position-relative">Contact Agent</h5>
                             <div class="agent-contact pt-60">
@@ -180,7 +138,6 @@ include("config.php");
                                                 <li><?php echo $row['uphone'];?></li>
                                                 <li><?php echo $row['uemail'];?></li>
                                             </ul>
-                                            
                                             <div class="mt-3 text-secondary hover-text-success">
                                                 <ul>
                                                     <li class="float-left mr-3"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -192,14 +149,11 @@ include("config.php");
                                             </div>
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
                         </div>
                     </div>
-					
 					<?php } ?>
-					
                     <div class="col-lg-4">
                         <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-md-50">Contact Seller</h4>
                         <form method="post" action="#">
@@ -224,7 +178,6 @@ include("config.php");
 										<textarea class="form-control" placeholder="Enter Message"></textarea>
                                     </div>
                                 </div>
-								
                                 <div class="col-md-12">
                                     <div class="form-group mt-4">
                                         <button type="submit" class="btn btn-primary btn-custom w-100">Send Message</button>
@@ -232,10 +185,8 @@ include("config.php");
                                 </div>
                             </div>
                         </form>
-                        
                         <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4 mt-5">Featured Property</h4>
                         <ul class="property_list_widget">
-							
                             <?php 
                             $query=mysqli_query($con,"SELECT * FROM `property` WHERE isFeatured = 1 ORDER BY date DESC LIMIT 3");
                                     while($row=mysqli_fetch_array($query))
@@ -244,16 +195,12 @@ include("config.php");
                             <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                 <h6 class="text-secondary hover-text-success text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h6>
                                 <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i> <?php echo $row['14'];?></span>
-                                
                             </li>
                             <?php } ?>
-
                         </ul>
-
                         <div class="sidebar-widget mt-5">
                             <h4 class="double-down-line-left text-secondary position-relative pb-4 mb-4">Recently Added Property</h4>
                             <ul class="property_list_widget">
-							
 								<?php 
 								$query=mysqli_query($con,"SELECT * FROM `property` ORDER BY date DESC LIMIT 7");
 										while($row=mysqli_fetch_array($query))
@@ -262,27 +209,20 @@ include("config.php");
                                 <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                     <h6 class="text-secondary hover-text-success text-capitalize"><a href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a></h6>
                                     <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i> <?php echo $row['14'];?></span>
-                                    
                                 </li>
                                 <?php } ?>
-
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
          <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
-        
-        
-       
     </div>
 </div>
 <!-- Wrapper End --> 
-
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 
@@ -300,7 +240,5 @@ include("config.php");
 <script src="js/jquery.slider.js"></script> 
 <script src="js/wow.js"></script> 
 <script src="js/custom.js"></script> 
-
 </body>
-
 </html>

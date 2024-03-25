@@ -9,25 +9,20 @@ if(isset($_REQUEST['reg']))
 	$phone=$_REQUEST['phone'];
 	$pass=$_REQUEST['pass'];
 	$utype=$_REQUEST['utype'];
-	
 	$uimage=$_FILES['uimage']['name'];
 	$temp_name1 = $_FILES['uimage']['tmp_name'];
 	$pass= sha1($pass);
-	
 	$query = "SELECT * FROM user where uemail='$email'";
 	$res=mysqli_query($con, $query);
 	$num=mysqli_num_rows($res);
-	
 	if($num == 1)
 	{
 		$error = "<p class='alert alert-warning'>Email Id already Exist</p> ";
 	}
 	else
 	{
-		
 		if(!empty($name) && !empty($email) && !empty($phone) && !empty($pass) && !empty($uimage))
 		{
-			
 			$sql="INSERT INTO user (uname,uemail,uphone,upass,utype,uimage) VALUES ('$name','$email','$phone','$pass','$utype','$uimage')";
 			$result=mysqli_query($con, $sql);
 			move_uploaded_file($temp_name1,"admin/user/$uimage");
@@ -41,27 +36,18 @@ if(isset($_REQUEST['reg']))
 			$error = "<p class='alert alert-warning'>Please Fill all the fields</p>";
 		}
 	}
-	
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
-
 <!--	Fonts
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -74,31 +60,16 @@ if(isset($_REQUEST['reg']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
         <!--	Banner   --->
         <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
             <div class="container">
@@ -118,9 +89,6 @@ if(isset($_REQUEST['reg']))
             </div>
         </div> -->
          <!--	Banner   --->
-		 
-		 
-		 
         <div class="page-wrappers login-body full-row bg-gray">
             <div class="login-wrapper">
             	<div class="container">
@@ -144,7 +112,6 @@ if(isset($_REQUEST['reg']))
 									<div class="form-group">
 										<input type="password" name="pass"  class="form-control" placeholder="Your Password*">
 									</div>
-
 									 <div class="form-check-inline">
 									  <label class="form-check-label">
 										<input type="radio" class="form-check-input" name="utype" value="User" checked>User
@@ -160,21 +127,16 @@ if(isset($_REQUEST['reg']))
 										<input type="radio" class="form-check-input" name="utype" value="Client">Client
 									  </label>
 									</div> 
-									
 									<div class="form-group">
 										<label class="col-form-label"><b>User Image</b></label>
 										<input class="form-control" name="uimage" type="file">
 									</div>
-									
 									<button class="btn btn-success" name="reg" value="Register" type="submit">Register</button>
-									
 								</form>
-								
 								<div class="login-or">
 									<span class="or-line"></span>
 									<span class="span-or">or</span>
 								</div>
-								
 								<!-- Social Login -->
 								<!-- <div class="social-login">
 									<span>Register with</span>
@@ -184,9 +146,7 @@ if(isset($_REQUEST['reg']))
 									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
 								</div> -->
 								<!-- /Social Login -->
-								
 								<div class="text-center dont-have">Already have an account? <a href="login.php">Login</a></div>
-								
 							</div>
                         </div>
                     </div>
@@ -194,15 +154,9 @@ if(isset($_REQUEST['reg']))
             </div>
         </div>
 	<!--	login  -->
-        
-        
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
     </div>
 </div>
 <!-- Wrapper End --> 

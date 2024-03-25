@@ -9,10 +9,8 @@ if(isset($_POST['send']))
 	$phone=$_POST['phone'];
 	$subject=$_POST['subject'];
 	$message=$_POST['message'];
-	
 	if(!empty($name) && !empty($email) && !empty($phone) && !empty($subject) && !empty($message))
 	{
-		
 		$sql="INSERT INTO contact (name,email,phone,subject,message) VALUES ('$name','$email','$phone','$subject','$message')";
 		   $result=mysqli_query($con, $sql);
 		   if($result){
@@ -29,20 +27,13 @@ if(isset($_POST['send']))
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
-
 <!--	Fonts
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -54,30 +45,16 @@ if(isset($_POST['send']))
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
-
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
         <!--	Banner -->
         <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
             <div class="container">
@@ -104,7 +81,6 @@ if(isset($_POST['send']))
                     <div class="col-lg-4 mb-5 bg-secondary">
                         <div class="contact-info">
                             <h3 class="mb-4 mt-4 text-white">Contacts</h3>
-							
                             <ul>
                                 <li class="d-flex mb-4"> <i class="fas fa-map-marker-alt text-white mr-2 font-13 mt-1"></i>
                                     <div class="contact-address">
@@ -124,7 +100,7 @@ if(isset($_POST['send']))
                                     <div class="contact-address">
                                         <h5 class="text-white">Email Adderss</h5>
 										<span class="d-table text-white">ashupawar183@gmail.com.com</span>
-										<span class="text-white">omkarphalke008.com</span>
+										<span class="text-white">Kathmanduphalke008.com</span>
 										</div>
                                 </li>
                             </ul>
@@ -173,22 +149,15 @@ if(isset($_POST['send']))
             </div>
         </div>
         <!--	Contact Inforamtion -->
-        
         <!--	Map -->
-		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.676250969288!2d73.78272891420447!3d18.54352667331309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bee6492cc017%3A0x4364f09302e46056!2sOmkar%20Real%20Estate!5e0!3m2!1sen!2sin!4v1660408533719!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.676250969288!2d73.78272891420447!3d18.54352667331309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bee6492cc017%3A0x4364f09302e46056!2sKathmandu%20Real%20Estate!5e0!3m2!1sen!2sin!4v1660408533719!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 		<!--	Map -->
-        
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
     </div>
 </div>
 <!-- Wrapper End --> 
-
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 
@@ -207,6 +176,5 @@ if(isset($_POST['send']))
 <script src="js/wow.js"></script> 
 <script src="js/jquery.cookie.js"></script> 
 <script src="js/custom.js"></script>  
-
 </body>
 </html>

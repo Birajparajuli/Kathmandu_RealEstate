@@ -1,5 +1,4 @@
 <?php
-
 $con = mysqli_connect("localhost","root","","realestatephp");
 	if (mysqli_connect_errno())
 	{

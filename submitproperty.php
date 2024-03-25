@@ -7,14 +7,12 @@ if(!isset($_SESSION['uemail']))
 {
 	header("location:login.php");
 }
-
 //// code insert
 //// add code
 $error="";
 $msg="";
 if(isset($_POST['add']))
 {
-	
 	$title=$_POST['title'];
 	$ptype=$_POST['ptype'];
 	$bhk=$_POST['bhk'];
@@ -32,41 +30,31 @@ if(isset($_POST['add']))
 	$state=$_POST['state'];
 	$status=$_POST['status'];
 	$uid=$_SESSION['uid'];
-	
-	
 	$totalfloor=$_POST['totalfl'];
-
-	
 	$aimage=$_FILES['aimage']['name'];
 	$aimage1=$_FILES['aimage1']['name'];
 	$aimage2=$_FILES['aimage2']['name'];
 	$aimage3=$_FILES['aimage3']['name'];
 	$aimage4=$_FILES['aimage4']['name'];
-	
 	$fimage=$_FILES['fimage']['name'];
 	$fimage1=$_FILES['fimage1']['name'];
 	$fimage2=$_FILES['fimage2']['name'];
-	
 	$temp_name  =$_FILES['aimage']['tmp_name'];
 	$temp_name1 =$_FILES['aimage1']['tmp_name'];
 	$temp_name2 =$_FILES['aimage2']['tmp_name'];
 	$temp_name3 =$_FILES['aimage3']['tmp_name'];
 	$temp_name4 =$_FILES['aimage4']['tmp_name'];
-	
 	$temp_name5 =$_FILES['fimage']['tmp_name'];
 	$temp_name6 =$_FILES['fimage1']['tmp_name'];
 	$temp_name7 =$_FILES['fimage2']['tmp_name'];
-	
 	move_uploaded_file($temp_name,"admin/property/$aimage");
 	move_uploaded_file($temp_name1,"admin/property/$aimage1");
 	move_uploaded_file($temp_name2,"admin/property/$aimage2");
 	move_uploaded_file($temp_name3,"admin/property/$aimage3");
 	move_uploaded_file($temp_name4,"admin/property/$aimage4");
-	
 	move_uploaded_file($temp_name5,"admin/property/$fimage");
 	move_uploaded_file($temp_name6,"admin/property/$fimage1");
 	move_uploaded_file($temp_name7,"admin/property/$fimage2");
-	
 	$sql="insert into property (title,type,bhk,stype,bedroom,bathroom,balcony,kitchen,hall,floor,size,price,location,city,state,pimage,pimage1,pimage2,pimage3,pimage4,uid,status,mapimage,topmapimage,groundmapimage,totalfloor)
 	values('$title','$ptype','$bhk','$stype','$bed','$bath','$balc','$kitc','$hall','$floor','$asize','$price',
 	'$loc','$city','$state','$aimage','$aimage1','$aimage2','$aimage3','$aimage4','$uid','$status','$fimage','$fimage1','$fimage2','$totalfloor')";
@@ -74,7 +62,6 @@ if(isset($_POST['add']))
 	if($result)
 		{
 			$msg="<p class='alert alert-success'>Property Inserted Successfully</p>";
-					
 		}
 		else
 		{
@@ -84,22 +71,14 @@ if(isset($_POST['add']))
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
-
 <!--	Fonts
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -112,31 +91,16 @@ if(isset($_POST['add']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
         <!--	Banner   --->
         <!-- <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
             <div class="container">
@@ -156,8 +120,6 @@ if(isset($_POST['add']))
             </div>
         </div> -->
          <!--	Banner   --->
-		 
-		 
 		<!--	Submit property   -->
         <div class="full-row">
             <div class="container">
@@ -172,7 +134,6 @@ if(isset($_POST['add']))
 									<h5 class="text-secondary">Basic Information</h5><hr>
 									<?php echo $error; ?>
 									<?php echo $msg; ?>
-									
 										<div class="row">
 											<div class="col-xl-12">
 												<div class="form-group row">
@@ -182,9 +143,7 @@ if(isset($_POST['add']))
 													</div>
 												</div>
 												<div class="form-group row">
-													
 												</div>
-												
 											</div>
 											<div class="col-xl-6">
 												<div class="form-group row">
@@ -223,7 +182,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="kitc" required placeholder="Enter Kitchen (only no 1 to 10)">
 													</div>
 												</div>
-												
 											</div>   
 											<div class="col-xl-6">
 												<div class="form-group row mb-3">
@@ -260,7 +218,6 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="hall" required placeholder="Enter Hall  (only no 1 to 10)">
 													</div>
 												</div>
-												
 											</div>
 										</div>
 										<h5 class="text-secondary">Price & Location</h5><hr>
@@ -343,20 +300,14 @@ if(isset($_POST['add']))
 														<input type="text" class="form-control" name="loc" required placeholder="Enter Address">
 													</div>
 												</div>
-												
 											</div>
 										</div>
-										
 										<div class="form-group row">
-											
-											
 											</div>
 										</div>
-												
 										<h5 class="text-secondary">Image & Status</h5><hr>
 										<div class="row">
 											<div class="col-xl-6">
-												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image</label>
 													<div class="col-lg-9">
@@ -393,7 +344,6 @@ if(isset($_POST['add']))
 												</div>
 											</div>
 											<div class="col-xl-6">
-												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Image 1</label>
 													<div class="col-lg-9">
@@ -406,7 +356,6 @@ if(isset($_POST['add']))
 														<input class="form-control" name="aimage3" type="file" required="">
 													</div>
 												</div>
-												
 												<div class="form-group row">
 													<label class="col-lg-3 col-form-label">Floor Plan Image</label>
 													<div class="col-lg-9">
@@ -421,35 +370,23 @@ if(isset($_POST['add']))
 												</div>
 											</div>
 										</div>
-
 										<hr>
-
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group row">
-													
 												</div>
 											</div>
 										</div>
-
-										
 										<input type="submit" value="Submit Property" class="btn btn-info"name="add" style="margin-left:200px;">
-										
 								</div>
 								</form>
                     </div>            
             </div>
         </div>
 	<!--	Submit property   -->
-        
-        
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
     </div>
 </div>
 <!-- Wrapper End --> 

@@ -7,7 +7,6 @@ if(!isset($_SESSION['uemail']))
 {
 	header("location:login.php");
 }
-
 ////// code
 $error='';
 $msg='';
@@ -15,14 +14,10 @@ if(isset($_POST['insert']))
 {
 	$name=$_POST['name'];
 	$phone=$_POST['phone'];
-
 	$content=$_POST['content'];
-	
 	$uid=$_SESSION['uid'];
-	
 	if(!empty($name) && !empty($phone) && !empty($content))
 	{
-		
 		$sql="INSERT INTO feedback (uid,fdescription,status) VALUES ('$uid','$content','0')";
 		   $result=mysqli_query($con, $sql);
 		   if($result){
@@ -38,22 +33,14 @@ if(isset($_POST['insert']))
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-<!-- Required meta tags -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Meta Tags -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="images/favicon.ico">
-
 <!--	Fonts
 	========================================================-->
 <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,500,600,700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700" rel="stylesheet">
-
 <!--	Css Link
 	========================================================-->
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -66,31 +53,16 @@ if(isset($_POST['insert']))
 <link rel="stylesheet" type="text/css" href="fonts/flaticon/flaticon.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
-
 <!--	Title
 	=========================================================-->
 <title>Real Estate PHP</title>
 </head>
 <body>
-
-<!--	Page Loader
-=============================================================
-<div class="page-loader position-fixed z-index-9999 w-100 bg-white vh-100">
-	<div class="d-flex justify-content-center y-middle position-relative">
-	  <div class="spinner-border" role="status">
-		<span class="sr-only">Loading...</span>
-	  </div>
-	</div>
-</div>
---> 
-
-
 <div id="page-wrapper">
     <div class="row"> 
         <!--	Header start  -->
 		<?php include("include/header.php");?>
         <!--	Header end  -->
-        
         <!--	Banner   --->
         <div class="banner-full-row page-banner" style="background-image:url('images/breadcromb.jpg');">
             <div class="container">
@@ -110,8 +82,6 @@ if(isset($_POST['insert']))
             </div>
         </div>
          <!--	Banner   --->
-		 
-		 
 		<!--	Submit property   -->
         <div class="full-row">
             <div class="container">
@@ -130,12 +100,10 @@ if(isset($_POST['insert']))
                                     <label for="user-id">Full Name</label>
                                     <input type="text" name="name" class="form-control" placeholder="Enter Full Name">
                                 </div>                
-                                
                                 <div class="form-group">
                                     <label for="phone">Contact Number</label>
                                     <input type="number" name="phone"  class="form-control" placeholder="Enter Phone" maxlength="10">
                                 </div>
-
                                 <div class="form-group">
                                     <label for="about-me">Your Feedback</label>
                                     <textarea class="form-control" name="content" rows="7" placeholder="Enter Text Here...."></textarea>
@@ -153,9 +121,7 @@ if(isset($_POST['insert']))
 								?>
                                 <div class="user-info mt-md-50"> <img src="admin/user/<?php echo $row['6'];?>" alt="userimage">
                                     <div class="mb-4 mt-3">
-                                        
                                     </div>
-									
                                     <div class="font-18">
                                         <div class="mb-1 text-capitalize"><b>Name:</b> <?php echo $row['1'];?></div>
                                         <div class="mb-1"><b>Email:</b> <?php echo $row['2'];?></div>
@@ -166,24 +132,16 @@ if(isset($_POST['insert']))
                                 </div>
                             </div>
                         </div>
-                    
                 </div>            
             </div>
         </div>
 	<!--	Submit property   -->
-       
-        
         <!--	Footer   start-->
 		<?php include("include/footer.php");?>
 		<!--	Footer   start-->
-        
-        <!-- Scroll to top --> 
-        <a href="#" class="bg-secondary text-white hover-text-secondary" id="scroll"><i class="fas fa-angle-up"></i></a> 
-        <!-- End Scroll To top --> 
     </div>
 </div>
 <!-- Wrapper End --> 
-
 <!--	Js Link
 ============================================================--> 
 <script src="js/jquery.min.js"></script> 

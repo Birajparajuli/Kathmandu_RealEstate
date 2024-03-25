@@ -2,7 +2,6 @@
 session_start();
 require("config.php");
 ////code
- 
 if(!isset($_SESSION['auser']))
 {
 	header("location:index.php");
@@ -10,45 +9,33 @@ if(!isset($_SESSION['auser']))
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-        <title>Omkar Real Estate | Profile</title>
-		
+        <title>Kathmandu Real Estate | Profile</title>
 		<!-- Favicon -->
         <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
-		
 		<!-- Bootstrap CSS -->
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-		
 		<!-- Fontawesome CSS -->
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-		
 		<!-- Feathericon CSS -->
         <link rel="stylesheet" href="assets/css/feathericon.min.css">
-		
 		<!-- Main CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
-		
 		<!--[if lt IE 9]>
 			<script src="assets/js/html5shiv.min.js"></script>
 			<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
     </head>
     <body>
-	
 		<!-- Main Wrapper -->
-
-		
 			<!-- Header -->
             <?php include("header.php");?>
 			<!-- /Header -->
-			
 			<!-- Page Wrapper -->
             <div class="page-wrapper">
                 <div class="content container-fluid">
-					
 					<!-- Page Header -->
 					<div class="page-header">
 						<div class="row">
@@ -62,10 +49,8 @@ if(!isset($_SESSION['auser']))
 						</div>
 					</div>
 					<!-- /Page Header -->
-					
 					<div class="row">
 						<?php
-						
 						$id=$_SESSION['auser'];
 						$sql="select * from admin where auser='$id'";
 						$result=mysqli_query($con,$sql);
@@ -87,7 +72,6 @@ if(!isset($_SESSION['auser']))
 											<?php echo $row['4']; ?></div>
 										<div class="about-text"></div>
 									</div>
-
 								</div>
 							</div>
 							<div class="profile-menu">
@@ -101,10 +85,8 @@ if(!isset($_SESSION['auser']))
 								</ul>
 							</div>	
 							<div class="tab-content profile-tab-cont">
-								
 								<!-- Personal Details Tab -->
 								<div class="tab-pane fade show active" id="per_details_tab">
-								
 									<!-- Personal Details -->
 									<div class="row">
 										<div class="col-lg-9">
@@ -126,36 +108,27 @@ if(!isset($_SESSION['auser']))
 														<p class="col-sm-3 text-muted text-sm-right mb-0 mb-sm-3">Mobile</p>
 														<p class="col-sm-9"><?php echo $row['5']; ?></p>
 													</div>
-													
 												</div>
 											</div>
 										</div>
-
 										<div class="col-lg-3">
-											
 											<!-- Account Status -->
 											<div class="card">
 												<div class="card-body">
 													<h5 class="card-title d-flex justify-content-between">
 														<span>Account Status</span>
-														
 													</h5>
 													<button class="btn btn-success" type="button"><i class="fe fe-check-verified"></i> Active</button>
 												</div>
 											</div>
 											<!-- /Account Status -->
-
-											
 										</div>
 									</div>
 									<!-- /Personal Details -->
-
 								</div>
 								<!-- /Personal Details Tab -->
-								
 								<!-- Change Password Tab -->
 								<div id="password_tab" class="tab-pane fade">
-								
 									<div class="card">
 										<div class="card-body">
 											<h5 class="card-title">Change Password</h5>
@@ -182,7 +155,6 @@ if(!isset($_SESSION['auser']))
 									</div>
 								</div>
 								<!-- /Change Password Tab -->
-								
 							</div>
 						</div>
 					</div>
@@ -190,21 +162,15 @@ if(!isset($_SESSION['auser']))
 				</div>			
 			</div>
 			<!-- /Page Wrapper -->
-
 		<!-- /Main Wrapper -->
-		
 		<!-- jQuery -->
         <script src="assets/js/jquery-3.2.1.min.js"></script>
-		
 		<!-- Bootstrap Core JS -->
         <script src="assets/js/popper.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
-		
 		<!-- Slimscroll JS -->
         <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-		
 		<!-- Custom JS -->
 		<script  src="assets/js/script.js"></script>
-		
     </body>
 </html>
