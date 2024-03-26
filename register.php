@@ -62,7 +62,7 @@ if(isset($_REQUEST['reg']))
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <!--	Title
 	=========================================================-->
-<title>Real Estate PHP</title>
+<title>Kathmandu Real Estate</title>
 </head>
 <body>
 <div id="page-wrapper">

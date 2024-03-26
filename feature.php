@@ -33,7 +33,7 @@ if(!isset($_SESSION['uemail']))
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <!--	Title
 	=========================================================-->
-    <title>Real Estate PHP</title>
+    <title>Kathmandu Real Estate</title>
 </head>
 
 <body>
@@ -58,7 +58,7 @@ if(!isset($_SESSION['uemail']))
                         <thead>
                             <tr class="bg-dark">
                                 <th class="text-white font-weight-bolder">Properties</th>
-                                <th class="text-white font-weight-bolder">BHK</th>
+                                <th class="text-white font-weight-bolder">Category</th>
                                 <th class="text-white font-weight-bolder">Type</th>
                                 <th class="text-white font-weight-bolder">Added Date</th>
                                 <th class="text-white font-weight-bolder">Status</th>
@@ -69,29 +69,29 @@ if(!isset($_SESSION['uemail']))
                         <tbody>
                             <?php 
 							$uid=$_SESSION['uid'];
-							$query=mysqli_query($con,"SELECT * FROM `property` WHERE uid='$uid'");
+							$query=mysqli_query($con,"SELECT * FROM `property_list` WHERE uid='$uid'");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>
                             <tr>
                                 <td>
-                                    <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
+                                    <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
                                     <div class="property-info d-table">
                                         <h5 class="text-secondary text-capitalize"><a
-                                                href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
+                                                href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                         </h5>
                                         <span class="font-14 text-capitalize"><i
                                                 class="fas fa-map-marker-alt text-success font-13"></i>&nbsp;
-                                            <?php echo $row['14'];?></span>
+                                            <?php echo $row['main_location'];?></span>
                                         <div class="price mt-3">
-                                            <span class="text-success">Rs. &nbsp;<?php echo $row['13'];?></span>
+                                            <span class="text-success">रु. &nbsp;<?php echo $row['price'];?></span>
                                         </div>
                                     </div>
                                 </td>
-                                <td><?php echo $row['4'];?></td>
-                                <td class="text-capitalize">For <?php echo $row['5'];?></td>
-                                <td><?php echo $row['29'];?></td>
-                                <td class="text-capitalize"><?php echo $row['24'];?></td>
+                                <td><?php echo $row['category'];?></td>
+                                <td class="text-capitalize">For <?php echo $row['sale_rent'];?></td>
+                                <td><?php echo $row['date'];?></td>
+                                <td class="text-capitalize"><?php echo $row['status'];?></td>
                                 <td><a class="btn btn-info"
                                         href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Update</a></td>
                                 <td><a class="btn btn-danger"

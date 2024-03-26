@@ -68,7 +68,7 @@ include("config.php");
                                         <div class="overlay-black overflow-hidden position-relative"> <img
                                                 src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                             <div class="sale bg-primary text-white">For <?php echo $row['5'];?></div>
-                                            <div class="price text-primary text-capitalize">Rs. <?php echo $row['13'];?>
+                                            <div class="price text-primary text-capitalize">रु.  <?php echo $row['13'];?>
                                                 <span class="text-white"><?php echo $row['12'];?> Sqft</span>
                                             </div>
                                         </div>

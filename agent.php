@@ -22,7 +22,7 @@ include("config.php");
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--	Title
 	=========================================================-->
-    <title>Real Estate PHP</title>
+    <title>Kathmandu Real Estate</title>
 </head>
 
 <body>

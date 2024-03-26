@@ -33,7 +33,7 @@ if(!isset($_SESSION['uemail']))
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <!--	Title
 	=========================================================-->
-    <title>Real Estate PHP</title>
+    <title>Kathmandu Real Estate</title>
 </head>
 
 <body>

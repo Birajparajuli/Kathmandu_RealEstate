@@ -70,7 +70,7 @@ if (isset($_POST['add'])) {
                     <div class="row">
                         <?php
 						$id=$_REQUEST['pid']; 
-						$query=mysqli_query($con,"SELECT property_list.*, user.* FROM `property_list`,`user` WHERE property_list.uid=user.uid and id='$id'");
+						$query=mysqli_query($con,"SELECT property.*, user.* FROM `property`,`user` WHERE property.uid=user.uid and pid='$id'");
 						while($row=mysqli_fetch_array($query))
 						{
 					  ?>
@@ -83,157 +83,91 @@ if (isset($_POST['add'])) {
                                         <div class="ls-slide"
                                             data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;">
                                             <img width="1920" height="1080"
-                                                src="admin/property/<?php echo $row['image1'];?>" class="ls-bg"
-                                                alt="" />
+                                                src="admin/property/<?php echo $row['18'];?>" class="ls-bg" alt="" />
                                         </div>
                                         <!-- Slide 2-->
                                         <div class="ls-slide"
                                             data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;">
                                             <img width="1920" height="1080"
-                                                src="admin/property/<?php echo $row['image2'];?>" class="ls-bg"
-                                                alt="" />
+                                                src="admin/property/<?php echo $row['19'];?>" class="ls-bg" alt="" />
                                         </div>
                                         <!-- Slide 3-->
                                         <div class="ls-slide"
                                             data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;">
                                             <img width="1920" height="1080"
-                                                src="admin/property/<?php echo $row['image3'];?>" class="ls-bg"
-                                                alt="" />
+                                                src="admin/property/<?php echo $row['20'];?>" class="ls-bg" alt="" />
                                         </div>
                                         <!-- Slide 4-->
                                         <div class="ls-slide"
                                             data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;">
                                             <img width="1920" height="1080"
-                                                src="admin/property/<?php echo $row['image4'];?>" class="ls-bg"
-                                                alt="" />
+                                                src="admin/property/<?php echo $row['21'];?>" class="ls-bg" alt="" />
                                         </div>
-
+                                        <!-- Slide 5-->
+                                        <div class="ls-slide"
+                                            data-ls="duration:7500; transition2d:5; kenburnszoom:in; kenburnsscale:1.2;">
+                                            <img width="1920" height="1080"
+                                                src="admin/property/<?php echo $row['22'];?>" class="ls-bg" alt="" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mb-4">
                                 <div class="col-md-6">
-                                    <div class="bg-secondary d-table p-2 rounded text-white">For
-                                        <?php echo $row['sale_rent'];?></div>
-                                    <h5 class="mt-2 text-secondary "><?php echo $row['ad_title'];?></h5>
-                                    <span class="mb-sm-20 d-block "><i
+                                    <div class="bg-success d-table px-3 py-2 rounded text-white text-capitalize">For
+                                        <?php echo $row['5'];?></div>
+                                    <h5 class="mt-2 text-secondary text-capitalize"><?php echo $row['1'];?></h5>
+                                    <span class="mb-sm-20 d-block text-capitalize"><i
                                             class="fas fa-map-marker-alt text-success font-12"></i>
-                                        &nbsp;<?php echo $row['main_location'];?></span>
+                                        &nbsp;<?php echo $row['14'];?></span>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="text-secondary text-left h5 my-2 text-md-right">
-                                        रु. <?php echo $row['price'];?></div>
+                                    <div class="text-success text-left h5 my-2 text-md-right">
+                                        रु. <?php echo $row['13'];?></div>
                                     <div class="text-left text-md-right">Price</div>
                                 </div>
                             </div>
                             <div class="property-details">
                                 <div class="bg-gray property-quantity px-4 pt-4 w-100">
                                     <ul>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['land_space'];?></span> Area
-                                        </li>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['living'];?></span> Living</li>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['bedroom'];?></span> Bedroom
-                                        </li>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['bathroom'];?></span> Bathroom
-                                        </li>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['kitchen'];?></span> Kitchen
-                                        </li>
-                                        <li class="mr-4"><span
-                                                class="text-secondary"><?php echo $row['parking'];?></span> Parking
-                                        </li>
+                                        <li><span class="text-secondary"><?php echo $row['12'];?></span> Sqft</li>
+                                        <li><span class="text-secondary"><?php echo $row['6'];?></span> Bedroom</li>
+                                        <li><span class="text-secondary"><?php echo $row['7'];?></span> Bathroom</li>
+                                        <li><span class="text-secondary"><?php echo $row['8'];?></span> Balcony</li>
+                                        <li><span class="text-secondary"><?php echo $row['10'];?></span> Hall</li>
+                                        <li><span class="text-secondary"><?php echo $row['9'];?></span> Kitchen</li>
                                     </ul>
                                 </div>
                                 <h4 class="text-secondary my-4">Description</h4>
-                                <p><?php echo $row['description'];?></p>
-                                <h5 class="mt-5 mb-4 text-secondary">Property Details</h5>
+                                <p><?php echo $row['2'];?></p>
+                                <h5 class="mt-5 mb-4 text-secondary">Property Summary</h5>
                                 <div class="table-striped font-14 pb-2 ">
                                     <table class="w-100">
                                         <tbody>
                                             <tr>
-                                                <td>Price</td>
-                                                <td class="text-capitalize text-danger">रु. <?php echo $row['price'];?>
-                                                </td>
-                                                <td>Land Area :</td>
-                                                <td class="text-capitalize"><?php echo $row['land_space'];?></td>
+                                                <td>BHK :</td>
+                                                <td class="text-capitalize"><?php echo $row['4'];?></td>
+                                                <td>Property Type :</td>
+                                                <td class="text-capitalize"><?php echo $row['3'];?></td>
                                             </tr>
                                             <tr>
-                                                <td>No of Flat:</td>
-                                                <td class="text-capitalize"><?php echo $row['no_of_flat'];?></td>
-                                                <td>Road Size :</td>
-                                                <td class="text-capitalize"><?php echo $row['road_size'];?></td>
+                                                <td>Floor :</td>
+                                                <td class="text-capitalize"><?php echo $row['11'];?></td>
+                                                <td>Total Floor :</td>
+                                                <td class="text-capitalize"><?php echo $row['28'];?></td>
                                             </tr>
                                             <tr>
-                                                <td>Built Year:</td>
-                                                <td class="text-capitalize"><?php echo $row['built_year'];?></td>
+                                                <td>City :</td>
+                                                <td class="text-capitalize"><?php echo $row['15'];?></td>
+                                                <td>State :</td>
+                                                <td class="text-capitalize"><?php echo $row['16'];?></td>
                                             </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h5 class="mt-5 mb-4 text-secondary">Interior Features</h5>
-                                <div class="table-striped font-14 pb-2 ">
-                                    <table class="w-100">
-                                        <tbody>
-                                            <tr>
-                                                <td>Direction:</td>
-                                                <td class="text-capitalize"><?php echo $row['direction'];?></td>
-                                                <td>Bedroom :</td>
-                                                <td class="text-capitalize"><?php echo $row['bedroom'];?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bathroom :</td>
-                                                <td class="text-capitalize"><?php echo $row['bathroom'];?></td>
-                                                <td>Living Room:</td>
-                                                <td class="text-capitalize"><?php echo $row['living'];?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Kitchen :</td>
-                                                <td class="text-capitalize"><?php echo $row['kitchen'];?></td>
-                                                <td>Total Rooms:</td>
-                                                <td class="text-capitalize"><?php echo $row['all_rooms'];?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Parking :</td>
-                                                <td class="text-capitalize"><?php echo $row['parking'];?></td>
-
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h5 class="mt-5 mb-4 text-secondary">Location Details</h5>
-                                <div class="table-striped font-14 pb-2 ">
-                                    <table class="w-100">
-                                        <tbody>
-                                            <tr>
-                                                <td>State:</td>
-                                                <td class="text-capitalize"><?php echo $row['state'];?></td>
-                                                <td>District</td>
-                                                <td class="text-capitalize"><?php echo $row['district'];?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>Municipality:</td>
-                                                <td class="text-capitalize"><?php echo $row['municipality'];?></td>
-                                                <td>Ward:</td>
-                                                <td class="text-capitalize"><?php echo $row['ward_no'];?></td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>Tole :</td>
-                                                <td class="text-capitalize"><?php echo $row['tole'];?></td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
                                 <h5 class="mt-5 mb-4 text-secondary">Map</h5>
-                                <div>
-                                    <?php echo $row['google_map'];?>
-                                </div>
-                                <!-- <?php
+
+                                <?php
                                 if(isset($_GET['pid'])&& isset($_GET['sts']))
                                     {
                                         $pid = $_GET['pid'];
@@ -243,7 +177,7 @@ if (isset($_POST['add'])) {
                             ?>
                                 <button class="btn" style="background-color:#04AA6D; border-radius: 5px; align: right; "
                                     onclick="location.href='propertydetail.php?pid=<?php echo $_GET['pid'] ?>&sts=<?php echo 'book';?>'">Book
-                                    Property</button> -->
+                                    Property</button>
 
 
                             </div>
@@ -276,7 +210,7 @@ if (isset($_POST['add'])) {
                             <form method="post">
                                 <div class="row">
                                     <input type="hidden" name="seller_id" value="<?php echo $row['uid'];?>">
-                                    <input type="hidden" name="property_id" value="<?php echo $row['id'];?>">
+                                    <input type="hidden" name="property_id" value="<?php echo $row['pid'];?>">
 
                                     <div class="col-md-12">
                                         <div class="form-group">
@@ -315,16 +249,16 @@ if (isset($_POST['add'])) {
                                 Property</h4>
                             <ul class="property_list_widget">
                                 <?php 
-                            $query=mysqli_query($con,"SELECT * FROM `property_list` WHERE is_featured = true ORDER BY date DESC LIMIT 3");
+                            $query=mysqli_query($con,"SELECT * FROM `property` WHERE isFeatured = 1 ORDER BY date DESC LIMIT 3");
                                     while($row=mysqli_fetch_array($query))
                                     {
                             ?>
-                                <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                     <h6 class="text-secondary hover-text-success text-capitalize"><a
-                                            href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
+                                            href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
                                     </h6>
                                     <span class="font-14"><i class="fas fa-map-marker-alt icon-success icon-small"></i>
-                                        <?php echo $row['main_location'];?></span>
+                                        <?php echo $row['14'];?></span>
                                 </li>
                                 <?php } ?>
                             </ul>
@@ -333,17 +267,17 @@ if (isset($_POST['add'])) {
                                     Added Property</h4>
                                 <ul class="property_list_widget">
                                     <?php 
-								$query=mysqli_query($con,"SELECT * FROM `property_list` ORDER BY date DESC LIMIT 7");
+								$query=mysqli_query($con,"SELECT * FROM `property` ORDER BY date DESC LIMIT 7");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
-                                    <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                    <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
                                         <h6 class="text-secondary hover-text-success text-capitalize"><a
-                                                href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
+                                                href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
                                         </h6>
                                         <span class="font-14"><i
                                                 class="fas fa-map-marker-alt icon-success icon-small"></i>
-                                            <?php echo $row['main_location'];?></span>
+                                            <?php echo $row['14'];?></span>
                                     </li>
                                     <?php } ?>
                                 </ul>

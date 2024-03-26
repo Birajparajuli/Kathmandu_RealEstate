@@ -29,7 +29,7 @@ include("config.php");
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <!--	Title
 	=========================================================-->
-    <title>Real Estate PHP</title>
+    <title>Kathmandu Real Estate</title>
 </head>
 
 <body>
@@ -123,7 +123,7 @@ include("config.php");
                                     <label class="sr-only">Property Amount</label>
                                     <div class="input-group mb-2 mr-sm-2">
                                         <div class="input-group-prepend">
-                                            <div class="input-group-text">Rs. </div>
+                                            <div class="input-group-text">रु.  </div>
                                         </div>
                                         <input type="text" class="form-control" name="amount"
                                             placeholder="Property Price">

@@ -89,42 +89,34 @@ include("config.php");
                             <div class="tab-content mt-4" id="pills-tabContent">
                                 <div class="" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
                                     <div class="row">
-                                        <?php $query=mysqli_query($con,"SELECT property.*, user.uname,user.utype,user.uimage FROM `property`,`user` WHERE property.uid=user.uid ORDER BY date DESC LIMIT 9");
+                                        <?php $query=mysqli_query($con,"SELECT property_list.*, user.uname,user.utype,user.uimage FROM `property_list`,`user` WHERE property_list.uid=user.uid ORDER BY date DESC LIMIT 9");
 										while($row=mysqli_fetch_array($query))
 										{
 									?>
                                         <div class="col-md-6 col-lg-4">
                                             <div class="featured-thumb hover-zoomer mb-4 property-card card">
                                                 <div class="overlay-black overflow-hidden position-relative"
-                                                    id="myCard"> <img src="admin/property/<?php echo $row['18'];?>"
+                                                    id="myCard"> <img src="admin/property/<?php echo $row['image1'];?>"
                                                         alt="pimage" style="height:100%;">
                                                     <div class="featured bg-primary text-white">New</div>
                                                     <div class="sale bg-primary text-white text-capitalize">For
-                                                        <?php echo $row['5'];?></div>
-                                                    <div class="price text-primary"><b>Rs.<?php echo $row['13'];?>
-                                                        </b><span class="text-white"><?php echo $row['12'];?>
-                                                            Sqft</span></div>
+                                                        <?php echo $row['sale_rent'];?></div>
+                                                    <div class="price text-primary"><b>रु. <?php echo $row['price'];?>
+                                                        </b><span class="text-white"><?php echo $row['land_space'];?>
+                                                        </span></div>
                                                 </div>
                                                 <div class=" shadow-one">
                                                     <div class="p-3">
                                                         <h5
                                                             class="text-secondary hover-text-success mb-2 text-capitalize">
                                                             <a
-                                                                href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
+                                                                href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                                         </h5>
                                                         <span class="location text-capitalize"><i
                                                                 class="fas fa-map-marker-alt text-success"></i>
-                                                            <?php echo $row['14'];?></span>
+                                                            <?php echo $row['main_location'];?></span>
                                                     </div>
-                                                    <div class="bg-gray quantity px-4 pt-4">
-                                                        <ul>
-                                                            <li><span><?php echo $row['12'];?></span> Sqft</li>
-                                                            <li><span><?php echo $row['6'];?></span> Beds</li>
-                                                            <li><span><?php echo $row['7'];?></span> Baths</li>
-                                                            <li><span><?php echo $row['9'];?></span> Kitchen</li>
-                                                            <li><span><?php echo $row['8'];?></span> Balcony</li>
-                                                        </ul>
-                                                    </div>
+
                                                     <div class="p-4 d-inline-block w-100">
                                                         <div class="float-left text-capitalize"><i
                                                                 class="fas fa-user text-success mr-1"></i>By :
@@ -145,69 +137,68 @@ include("config.php");
                 </div>
             </div>
             <!--	Recent Properties  -->
-            <div class="full-row overlay-secondary"
-                style="background-image: url('images/breadcromb.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+            <div class=" full-row bg-gray " style="margin:10px; border-radius:6px">
                 <div class="container">
                     <div class="fact-counter">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i
-                                        class="flaticon-house flat-large text-white" aria-hidden="true"></i>
+                                        class="flaticon-house flat-large " aria-hidden="true"></i>
                                     <?php
-										$query=mysqli_query($con,"SELECT count(pid) FROM property");
+										$query=mysqli_query($con,"SELECT count(id) FROM property_list");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <div class="count-num text-success my-4" data-speed="3000" data-stop="<?php 
+                                    <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
 												$total = $row[0];
 												echo $total;?>">0</div>
                                     <?php } ?>
-                                    <div class="text-white h5">Total Available Property</div>
+                                    <div class=" h5">Total Available Property</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i
-                                        class="flaticon-house flat-large text-white" aria-hidden="true"></i>
+                                        class="flaticon-house flat-large " aria-hidden="true"></i>
                                     <?php
-										$query=mysqli_query($con,"SELECT count(pid) FROM property where stype='sale'");
+										$query=mysqli_query($con,"SELECT count(id) FROM property_list where sale_rent='Sale'");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <div class="count-num text-success my-4" data-speed="3000" data-stop="<?php 
+                                    <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
 												$total = $row[0];
 												echo $total;?>">0</div>
                                     <?php } ?>
-                                    <div class="text-white h5">Property For Sale</div>
+                                    <div class=" h5">Property For Sale</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i
-                                        class="flaticon-house flat-large text-white" aria-hidden="true"></i>
+                                        class="flaticon-house flat-large " aria-hidden="true"></i>
                                     <?php
-										$query=mysqli_query($con,"SELECT count(pid) FROM property where stype='rent'");
+										$query=mysqli_query($con,"SELECT count(id) FROM property_list where sale_rent='Rent'");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <div class="count-num text-success my-4" data-speed="3000" data-stop="<?php 
+                                    <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
 												$total = $row[0];
 												echo $total;?>">0</div>
                                     <?php } ?>
-                                    <div class="text-white h5">Property For Rent</div>
+                                    <div class=" h5">Property For Rent</div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="count wow text-center  mb-sm-50" data-wow-duration="300ms"> <i
-                                        class="flaticon-man flat-large text-white" aria-hidden="true"></i>
+                                        class="flaticon-man flat-large " aria-hidden="true"></i>
                                     <?php
 										$query=mysqli_query($con,"SELECT count(uid) FROM user");
 											while($row=mysqli_fetch_array($query))
 												{
 										?>
-                                    <div class="count-num text-success my-4" data-speed="3000" data-stop="<?php 
+                                    <div class="count-num text-primary my-4" data-speed="3000" data-stop="<?php 
 												$total = $row[0];
 												echo $total;?>">0</div>
                                     <?php } ?>
-                                    <div class="text-white h5">Total Users</div>
+                                    <div class=" h5">Total Users</div>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +206,7 @@ include("config.php");
                 </div>
             </div>
             <!--	Popular Place -->
-            <div class="full-row bg-gray">
+            <!-- <div class="full-row bg-gray">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
@@ -307,7 +298,7 @@ include("config.php");
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!--	Popular Places -->
             <!--	Footer   start-->
             <?php include("include/footer.php");?>

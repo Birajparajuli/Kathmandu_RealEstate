@@ -1799,6 +1799,10 @@ table th {
 .fact-counter .count-num {
   font-size: 30px;
 }
+
+.fact-counter {
+  margin: 10px;
+}
 /*==========================================
  Progesss Bar
  ===========================================*/
