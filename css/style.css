@@ -767,10 +767,7 @@ footer {
   border-radius: 6px;
   color: #000;
 }
-.footer-widget .double-down-line-left::after {
-  width: 40px;
-  bottom: -5px;
-}
+
 [class*="overlay-"]::before {
   position: absolute;
   content: " ";
@@ -1672,6 +1669,18 @@ blockquote {
   display: table;
   padding-bottom: 5px;
 }
+
+.property-quantity {
+  border-radius: 6px;
+}
+
+.agent-contact {
+  background-color: var(--theme-gray-color);
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
 .featured-thumb.list {
   display: flex;
 }

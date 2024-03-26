@@ -47,7 +47,7 @@ if(!isset($_SESSION['uemail']))
                 <div class="container">
                     <div class="row mb-5">
                         <div class="col-lg-12">
-                            <h2 class="text-secondary double-down-line text-center">User Listed Property</h2>
+                            <h2 class="text-secondary double-down-line text-center">User Inquiries</h2>
                             <?php 
 								if(isset($_GET['msg']))	
 								echo $_GET['msg'];	
@@ -57,77 +57,68 @@ if(!isset($_SESSION['uemail']))
                     <table class="items-list col-lg-12 table-hover" style="border-collapse:inherit;">
                         <thead>
                             <tr class="bg-dark">
-                                <th class="text-white font-weight-bolder">Properties</th>
-                                <th class="text-white font-weight-bolder">BHK</th>
-                                <th class="text-white font-weight-bolder">Type</th>
-                                <th class="text-white font-weight-bolder">Added Date</th>
-                                <th class="text-white font-weight-bolder">Status</th>
-                                <th class="text-white font-weight-bolder">Update</th>
-                                <th class="text-white font-weight-bolder">Delete</th>
+                                <th class="text-white font-weight-bolder">Property ID</th>
+                                <th class="text-white font-weight-bolder">Name</th>
+                                <th class="text-white font-weight-bolder">Phone</th>
+                                <th class="text-white font-weight-bolder">Email</th>
+                                <th class="text-white font-weight-bolder">Message</th>
+                                <th class="text-white font-weight-bolder">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php 
 							$uid=$_SESSION['uid'];
-							$query=mysqli_query($con,"SELECT * FROM `property` WHERE uid='$uid'");
+							$query=mysqli_query($con,"SELECT * FROM `inquiry` WHERE sellerId='$uid'");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>
                             <tr>
                                 <td>
-                                    <img src="admin/property/<?php echo $row['18'];?>" alt="pimage">
+
                                     <div class="property-info d-table">
                                         <h5 class="text-secondary text-capitalize"><a
-                                                href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
+                                                href="propertydetail.php?pid=<?php echo $row['propertyId'];?>">PID-<?php echo $row['propertyId'];?></a>
                                         </h5>
-                                        <span class="font-14 text-capitalize"><i
-                                                class="fas fa-map-marker-alt text-success font-13"></i>&nbsp;
-                                            <?php echo $row['14'];?></span>
-                                        <div class="price mt-3">
-                                            <span class="text-success">Rs. &nbsp;<?php echo $row['13'];?></span>
-                                        </div>
+
                                     </div>
                                 </td>
-                                <td><?php echo $row['4'];?></td>
-                                <td class="text-capitalize">For <?php echo $row['5'];?></td>
-                                <td><?php echo $row['29'];?></td>
-                                <td class="text-capitalize"><?php echo $row['24'];?></td>
-                                <td><a class="btn btn-info"
-                                        href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Update</a></td>
+                                <td><?php echo $row['name'];?></td>
+                                <td><?php echo $row['phone'];?></td>
+                                <td><?php echo $row['email'];?></td>
+                                <td><?php echo $row['message'];?></td>
+
                                 <td><a class="btn btn-danger"
-                                        href="submitpropertydelete.php?id=<?php echo $row['0'];?>">Delete</a></td>
+                                        href="submitinquirydelete.php?id=<?php echo $row['0'];?>">Delete</a></td>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
-                    <a class="btn btn-success d-none d-xl-block" style="border-radius:30px;"
-                        href="submitproperty.php">Submit Peoperty</a>
+
                 </div>
+                <!--	Submit property   -->
+                <!--	Footer   start-->
+                <?php include("include/footer.php");?>
+                <!--	Footer   start-->
             </div>
-            <!--	Submit property   -->
-            <!--	Footer   start-->
-            <?php include("include/footer.php");?>
-            <!--	Footer   start-->
         </div>
-    </div>
-    <!-- Wrapper End -->
-    <!--	Js Link
+        <!-- Wrapper End -->
+        <!--	Js Link
 ============================================================-->
-    <script src="js/jquery.min.js"></script>
-    <!--jQuery Layer Slider -->
-    <script src="js/greensock.js"></script>
-    <script src="js/layerslider.transitions.js"></script>
-    <script src="js/layerslider.kreaturamedia.jquery.js"></script>
-    <!--jQuery Layer Slider -->
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/tmpl.js"></script>
-    <script src="js/jquery.dependClass-0.1.js"></script>
-    <script src="js/draggable-0.1.js"></script>
-    <script src="js/jquery.slider.js"></script>
-    <script src="js/wow.js"></script>
-    <script src="js/custom.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <!--jQuery Layer Slider -->
+        <script src="js/greensock.js"></script>
+        <script src="js/layerslider.transitions.js"></script>
+        <script src="js/layerslider.kreaturamedia.jquery.js"></script>
+        <!--jQuery Layer Slider -->
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/tmpl.js"></script>
+        <script src="js/jquery.dependClass-0.1.js"></script>
+        <script src="js/draggable-0.1.js"></script>
+        <script src="js/jquery.slider.js"></script>
+        <script src="js/wow.js"></script>
+        <script src="js/custom.js"></script>
 </body>
 
 </html>

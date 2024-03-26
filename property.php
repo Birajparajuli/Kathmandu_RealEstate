@@ -45,7 +45,7 @@ include("config.php");
                                 <div class="featured-thumb hover-zoomer mb-4">
                                     <div class="overlay-black overflow-hidden position-relative" id="myCard"> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage" style="height:100%;" >
                                         <div class="sale bg-success text-white">For <?php echo $row['5'];?></div>
-                                        <div class="price text-primary text-capitalize">₹<?php echo $row['13'];?> <span class="text-white"><?php echo $row['12'];?> Sqft</span></div>
+                                        <div class="price text-primary text-capitalize">Rs. <?php echo $row['13'];?> <span class="text-white"><?php echo $row['12'];?> Sqft</span></div>
                                     </div>
                                     <div class="featured-thumb-data shadow-one">
                                         <div class="p-4">

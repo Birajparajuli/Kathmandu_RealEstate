@@ -6,9 +6,9 @@ include("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <!--	Css Link
-	========================================================-->
+
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap-slider.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
@@ -17,10 +17,10 @@ include("config.php");
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <!--	Title
-	=========================================================-->
+
     <title>Unlock Your Dream Home in Kathmandu</title>
 </head>
+
 <body>
     <div id="page-wrapper">
         <div class="row">
@@ -41,12 +41,11 @@ include("config.php");
                                             <div class="form-group">
                                                 <select class="form-control" name="type">
                                                     <option value="">Select Type</option>
-                                                    <option value="apartment">Apartment</option>
-                                                    <option value="flat">Flat</option>
-                                                    <option value="building">Building</option>
                                                     <option value="house">House</option>
-                                                    <option value="villa">Villa</option>
-                                                    <option value="office">Office</option>
+                                                    <option value="apartment">Apartment</option>
+                                                    <option value="building">Building</option>
+
+
                                                 </select>
                                             </div>
                                         </div>
@@ -337,4 +336,5 @@ include("config.php");
     <script src="js/jquery.cookie.js"></script>
     <script src="js/custom.js"></script>
 </body>
+
 </html>
