@@ -53,7 +53,7 @@ include("config.php");
 								$type=$_REQUEST['type'];
 								$stype=$_REQUEST['stype'];
 								$city=$_REQUEST['city'];
-								$sql="SELECT property.*, user.uname FROM `property`,`user` WHERE property.uid=user.uid and type='{$type}' and stype='{$stype}' and city='{$city}'";
+								$sql="SELECT property_list.*, user.uname FROM `property_list`,`user` WHERE property_list.uid=user.uid and category='{$type}' and sale_rent='{$stype}' and main_location='{$city}' or district='{$city}' or municipality='{$city}'";
 								
 								$result=mysqli_query($con,$sql);
 								if(mysqli_num_rows($result)>0)
@@ -66,20 +66,22 @@ include("config.php");
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
                                         <div class="overlay-black overflow-hidden position-relative"> <img
-                                                src="admin/property/<?php echo $row['18'];?>" alt="pimage">
-                                            <div class="sale bg-primary text-white">For <?php echo $row['5'];?></div>
-                                            <div class="price text-primary text-capitalize">रु.  <?php echo $row['13'];?>
-                                                <span class="text-white"><?php echo $row['12'];?> Sqft</span>
+                                                src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                            <div class="sale bg-primary text-white">For <?php echo $row['sale_rent'];?>
+                                            </div>
+                                            <div class="price text-primary text-capitalize">रु.
+                                                <?php echo $row['price'];?>
+                                                <span class="text-white"><?php echo $row['land_space'];?></span>
                                             </div>
                                         </div>
                                         <div class="featured-thumb-data shadow-one">
                                             <div class="p-4">
                                                 <h5 class="text-secondary hover-text-success mb-2 text-capitalize"><a
-                                                        href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
+                                                        href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                                 </h5>
                                                 <span class="location text-capitalize"><i
                                                         class="fas fa-map-marker-alt text-success"></i>
-                                                    <?php echo $row['14'];?></span>
+                                                    <?php echo $row['main_location'];?></span>
                                             </div>
                                             <div class="px-4 pb-4 d-inline-block w-100">
                                                 <div class="float-left text-capitalize"><i
@@ -123,18 +125,18 @@ include("config.php");
                                     Added Property</h4>
                                 <ul class="property_list_widget">
                                     <?php 
-								$query=mysqli_query($con,"SELECT * FROM `property` ORDER BY date DESC LIMIT 6");
+								$query=mysqli_query($con,"SELECT * FROM `property_list` ORDER BY date DESC LIMIT 6");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
-                                    <li> <img src="admin/property/<?php echo $row['18'];?>" alt="pimage"
+                                    <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
                                             style="border-radius:6px">
                                         <h6 class="text-secondary hover-text-success text-capitalize"><a
-                                                href="propertydetail.php?pid=<?php echo $row['0'];?>"><?php echo $row['1'];?></a>
+                                                href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                         </h6>
                                         <span class="font-14"><i
                                                 class="fas fa-map-marker-alt icon-success icon-small"></i>
-                                            <?php echo $row['14'];?></span>
+                                            <?php echo $row['main_location'];?></span>
                                     </li>
                                     <?php } ?>
                                 </ul>

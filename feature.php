@@ -48,6 +48,9 @@ if(!isset($_SESSION['uemail']))
                     <div class="row mb-5">
                         <div class="col-lg-12">
                             <h2 class="text-secondary double-down-line text-center">User Listed Property</h2>
+                            <a class="btn btn-primary btn-custom" style="border-radius:30px;"
+                                href="submitproperty.php">Add New
+                                Property</a>
                             <?php 
 								if(isset($_GET['msg']))	
 								echo $_GET['msg'];	
@@ -93,15 +96,14 @@ if(!isset($_SESSION['uemail']))
                                 <td><?php echo $row['date'];?></td>
                                 <td class="text-capitalize"><?php echo $row['status'];?></td>
                                 <td><a class="btn btn-info"
-                                        href="submitpropertyupdate.php?id=<?php echo $row['0'];?>">Update</a></td>
+                                        href="submitpropertyupdate.php?id=<?php echo $row['id'];?>">Update</a></td>
                                 <td><a class="btn btn-danger"
-                                        href="submitpropertydelete.php?id=<?php echo $row['0'];?>">Delete</a></td>
+                                        href="submitpropertydelete.php?id=<?php echo $row['id'];?>">Delete</a></td>
                             </tr>
                             <?php } ?>
                         </tbody>
                     </table>
-                    <a class="btn btn-success d-none d-xl-block" style="border-radius:30px;"
-                        href="submitproperty.php">Submit Peoperty</a>
+
                 </div>
             </div>
             <!--	Submit property   -->

@@ -95,7 +95,8 @@ if(isset($_POST['insert']))
                                         <textarea class="form-control" name="content" rows="7"
                                             placeholder="Enter Text Here...."></textarea>
                                     </div>
-                                    <input type="submit" class="btn btn-info mb-4" name="insert" value="Send Feedback">
+                                    <input type="submit" class="btn btn-primary btn-custom mb-4" name="insert"
+                                        value="Send Feedback">
                                 </div>
                         </form>
                         <div class="col-lg-1"></div>
