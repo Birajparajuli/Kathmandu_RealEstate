@@ -95,7 +95,7 @@ include("config.php");
 									?>
                                         <div class="col-md-6 col-lg-4">
                                             <div class="featured-thumb hover-zoomer mb-4 property-card card">
-                                            <div class="overlay-black overflow-hidden position-relative"
+                                                <div class="overlay-black overflow-hidden position-relative"
                                                     id="myCard"> <img src="admin/property/<?php echo $row['image1'];?>"
                                                         alt="pimage" style="height:100%;">
                                                     <div class="featured bg-primary text-white">New</div>
@@ -113,7 +113,7 @@ include("config.php");
                                                                 href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                                         </h5>
                                                         <span class="location text-capitalize"><i
-                                                                class="fas fa-map-marker-alt text-success"></i>
+                                                                class="fa fa-map-marker-alt text-success"></i>
                                                             <?php echo $row['main_location'];?></span>
                                                     </div>
 
@@ -206,99 +206,7 @@ include("config.php");
                 </div>
             </div>
             <!--	Popular Place -->
-            <!-- <div class="full-row bg-gray">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <h2 class="text-secondary double-down-line text-center mb-5">Popular Places</h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="row">
-                            <div class="col-md-6 col-lg-3 pb-1">
-                                <div
-                                    class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9">
-                                    <img src="images/thumbnail4/1.jpg" alt="">
-                                    <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
-                                        <?php
-										$query=mysqli_query($con,"SELECT count(state), property.* FROM property where city='Pune'");
-											while($row=mysqli_fetch_array($query))
-												{
-										?>
-                                        <h4 class="hover-text-success text-capitalize"><a
-                                                href="stateproperty.php?id=<?php echo $row['17']?>"><?php echo $row['state'];?></a>
-                                        </h4>
-                                        <span><?php 
-												$total = $row[0];
-												echo $total;?> Properties Listed</span>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 pb-1">
-                                <div
-                                    class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9">
-                                    <img src="images/thumbnail4/2.jpg" alt="">
-                                    <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
-                                        <?php
-										$query=mysqli_query($con,"SELECT count(state), property.* FROM property where city='Panaji'");
-											while($row=mysqli_fetch_array($query))
-												{
-										?>
-                                        <h4 class="hover-text-success text-capitalize"><a
-                                                href="stateproperty.php?id=<?php echo $row['17']?>"><?php echo $row['state'];?></a>
-                                        </h4>
-                                        <span><?php 
-												$total = $row[0];
-												echo $total;?> Properties Listed</span>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 pb-1">
-                                <div
-                                    class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9">
-                                    <img src="images/thumbnail4/3.jpg" alt="">
-                                    <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
-                                        <?php
-										$query=mysqli_query($con,"SELECT count(state), property.* FROM property where city='Surat'");
-											while($row=mysqli_fetch_array($query))
-												{
-										?>
-                                        <h4 class="hover-text-success text-capitalize"><a
-                                                href="stateproperty.php?id=<?php echo $row['17']?>"><?php echo $row['state'];?></a>
-                                        </h4>
-                                        <span><?php 
-												$total = $row[0];
-												echo $total;?> Properties Listed</span>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 pb-1">
-                                <div
-                                    class="overflow-hidden position-relative overlay-secondary hover-zoomer mx-n13 z-index-9">
-                                    <img src="images/thumbnail4/4.jpg" alt="">
-                                    <div class="text-white xy-center z-index-9 position-absolute text-center w-100">
-                                        <?php
-										$query=mysqli_query($con,"SELECT count(state), property.* FROM property where city='Jaipur'");
-											while($row=mysqli_fetch_array($query))
-												{
-										?>
-                                        <h4 class="hover-text-success text-capitalize"><a
-                                                href="stateproperty.php?id=<?php echo $row['17']?>"><?php echo $row['state'];?></a>
-                                        </h4>
-                                        <span><?php 
-												$total = $row[0];
-												echo $total;?> Properties Listed</span>
-                                    </div>
-                                    <?php } ?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+
             <!--	Popular Places -->
             <!--	Footer   start-->
             <?php include("include/footer.php");?>

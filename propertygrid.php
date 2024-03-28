@@ -60,8 +60,12 @@ include("config.php");
              AND sale_rent = '{$stype}' 
              AND (main_location = '{$city}' 
                   OR district = '{$city}' 
-                  OR municipality = '{$city}')
+                  OR municipality = '{$city}'
+                  OR ad_title LIKE '%{$city}%'
+                  OR tole = '{$city}'
+                 )
             )";
+
 								$result=mysqli_query($con,$sql);
 								if(mysqli_num_rows($result)>0)
 								{

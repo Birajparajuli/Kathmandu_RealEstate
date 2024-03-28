@@ -79,12 +79,12 @@ if(!isset($_SESSION['auser']))
                     <span>All Users</span>
                 </li>
                 <li class="submenu">
-                    <a href="#"><i class="fe fe-user"></i> <span> All Users </span> <span class="menu-arrow"></span></a>
+                    <a href="#"><i class="fe fe-user"></i> <span>Users </span> <span class="menu-arrow"></span></a>
                     <ul style="display: none;">
                         <li><a href="adminlist.php"> Admin </a></li>
                         <li><a href="userlist.php"> Users </a></li>
                         <li><a href="useragent.php"> Agent </a></li>
-                        <!-- <li><a href="userbuilder.php"> Client </a></li> -->
+
                     </ul>
                 </li>
                 <!-- <li class="menu-title"> 
@@ -100,23 +100,16 @@ if(!isset($_SESSION['auser']))
                 <li class="menu-title">
                     <span>Property Management</span>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="fe fe-map"></i> <span> Property</span> <span class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="propertyadd.php"> Add Property</a></li>
-                        <li><a href="propertyview.php"> View Property </a></li>
-                    </ul>
+                <li class="">
+                    <a href="propertyview.php"><i class="fe fe-map"></i> <span> Property List</span> </a>
+
                 </li>
                 <li class="menu-title">
                     <span>Query</span>
                 </li>
-                <li class="submenu">
-                    <a href="#"><i class="fe fe-comment"></i> <span> Contact,Feedback </span> <span
-                            class="menu-arrow"></span></a>
-                    <ul style="display: none;">
-                        <li><a href="contactview.php"> Contact </a></li>
-                        <li><a href="feedbackview.php"> Feedback </a></li>
-                    </ul>
+                <li class="">
+                    <a href="feedbackview.php"><i class="fe fe-comment"></i> <span> Feedback </span> <span></span></a>
+
                 </li>
             </ul>
         </div>
