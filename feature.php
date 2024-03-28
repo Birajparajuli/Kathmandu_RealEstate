@@ -60,13 +60,14 @@ if(!isset($_SESSION['uemail']))
                     <table class="items-list col-lg-12 table-hover" style="border-collapse:inherit;">
                         <thead>
                             <tr class="bg-dark">
-                                <th class="text-white font-weight-bolder">Properties</th>
-                                <th class="text-white font-weight-bolder">Category</th>
-                                <th class="text-white font-weight-bolder">Type</th>
-                                <th class="text-white font-weight-bolder">Added Date</th>
-                                <th class="text-white font-weight-bolder">Status</th>
-                                <th class="text-white font-weight-bolder">Update</th>
-                                <th class="text-white font-weight-bolder">Delete</th>
+                                <th class="text-white ">Properties</th>
+                                <th class="text-white ">Category</th>
+                                <th class="text-white ">Type</th>
+                                <th class="text-white ">Added Date</th>
+                                <th class="text-white "> Property Status</th>
+                                <th class="text-white "> Approval Status</th>
+                                <th class="text-white ">Update</th>
+                                <th class="text-white ">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -78,7 +79,9 @@ if(!isset($_SESSION['uemail']))
 							?>
                             <tr>
                                 <td>
-                                    <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                    <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
+                                        class="img-thumbnail img-fluid "
+                                        style="height:200px; width: 200px; object-fit:cover">
                                     <div class="property-info d-table">
                                         <h5 class="text-secondary text-capitalize"><a
                                                 href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
@@ -95,6 +98,12 @@ if(!isset($_SESSION['uemail']))
                                 <td class="text-capitalize">For <?php echo $row['sale_rent'];?></td>
                                 <td><?php echo $row['date'];?></td>
                                 <td class="text-capitalize"><?php echo $row['status'];?></td>
+                                <td class="text-capitalize">
+                                    <?php if( $row['32']==1){
+                                                echo "<span class='badge bg-success text-white'>Approved</span>";
+                                            }else{
+                                                echo "<span class='badge bg-danger text-white'>Pending</span>";
+                                            } ?></td>
                                 <td><a class="btn btn-info"
                                         href="submitpropertyupdate.php?id=<?php echo $row['id'];?>">Update</a></td>
                                 <td><a class="btn btn-danger"

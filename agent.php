@@ -66,11 +66,15 @@ include("config.php");
                             ?>
                         <div class="col-md-6 col-lg-4">
                             <div class="hover-zoomer bg-white shadow-one mb-4">
-                                <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6'];?>"
-                                        alt="aimage"> </div>
+                                <div class="overflow-hidden"> <img src="admin/user/<?php echo $row['6'];?>" alt="aimage"
+                                        class="img-thumbnail img-fluid "
+                                        style="height:400px; width: 400px; object-fit:cover"> </div>
                                 <div class="py-3 text-center">
                                     <h5 class="text-secondary hover-text-success"><a
                                             href="#"><?php echo $row['1'];?></a></h5>
+                                    <div>
+                                        <a href="tel:<?php echo $row['3'];?>"><?php echo $row['3'];?></a>
+                                    </div>
                                     <span>Real Estate - Agent</span>
                                 </div>
                             </div>

@@ -53,8 +53,15 @@ include("config.php");
 								$type=$_REQUEST['type'];
 								$stype=$_REQUEST['stype'];
 								$city=$_REQUEST['city'];
-								$sql="SELECT property_list.*, user.uname FROM `property_list`,`user` WHERE property_list.uid=user.uid and category='{$type}' and sale_rent='{$stype}' and main_location='{$city}' or district='{$city}' or municipality='{$city}'";
-								
+								$sql = "SELECT property_list.*, user.uname 
+        FROM `property_list`, `user` 
+        WHERE property_list.uid = user.uid 
+        AND (category = '{$type}' 
+             AND sale_rent = '{$stype}' 
+             AND (main_location = '{$city}' 
+                  OR district = '{$city}' 
+                  OR municipality = '{$city}')
+            )";
 								$result=mysqli_query($con,$sql);
 								if(mysqli_num_rows($result)>0)
 								{
@@ -125,12 +132,13 @@ include("config.php");
                                     Added Property</h4>
                                 <ul class="property_list_widget">
                                     <?php 
-								$query=mysqli_query($con,"SELECT * FROM `property_list` ORDER BY date DESC LIMIT 6");
+								$query=mysqli_query($con,"SELECT * FROM `property_list` WHERE approved=true ORDER BY date DESC LIMIT 2");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
                                     <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
-                                            style="border-radius:6px">
+                                            class="img-thumbnail img-fluid "
+                                            style="height:100px; width: 100px; object-fit:cover">
                                         <h6 class="text-secondary hover-text-success text-capitalize"><a
                                                 href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                         </h6>

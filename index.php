@@ -89,13 +89,13 @@ include("config.php");
                             <div class="tab-content mt-4" id="pills-tabContent">
                                 <div class="" id="pills-home" role="tabpanel" aria-labelledby="pills-home">
                                     <div class="row">
-                                        <?php $query=mysqli_query($con,"SELECT property_list.*, user.uname,user.utype,user.uimage FROM `property_list`,`user` WHERE property_list.uid=user.uid ORDER BY date DESC LIMIT 9");
+                                        <?php $query=mysqli_query($con,"SELECT property_list.*, user.uname,user.utype,user.uimage FROM `property_list`,`user` WHERE property_list.uid=user.uid AND approved=true ORDER BY date DESC LIMIT 9");
 										while($row=mysqli_fetch_array($query))
 										{
 									?>
                                         <div class="col-md-6 col-lg-4">
                                             <div class="featured-thumb hover-zoomer mb-4 property-card card">
-                                                <div class="overlay-black overflow-hidden position-relative"
+                                            <div class="overlay-black overflow-hidden position-relative"
                                                     id="myCard"> <img src="admin/property/<?php echo $row['image1'];?>"
                                                         alt="pimage" style="height:100%;">
                                                     <div class="featured bg-primary text-white">New</div>

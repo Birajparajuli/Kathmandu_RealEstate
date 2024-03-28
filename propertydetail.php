@@ -315,11 +315,13 @@ if (isset($_POST['add'])) {
                                 Property</h4>
                             <ul class="property_list_widget">
                                 <?php 
-                            $query=mysqli_query($con,"SELECT * FROM `property_list` WHERE is_featured = true ORDER BY date DESC LIMIT 3");
+                            $query=mysqli_query($con,"SELECT * FROM `property_list` WHERE is_featured = true and approved=true ORDER BY date DESC LIMIT 3");
                                     while($row=mysqli_fetch_array($query))
                                     {
                             ?>
-                                <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
+                                        class="img-thumbnail img-fluid "
+                                        style="height:100px; width: 100px; object-fit:cover">
                                     <h6 class="text-secondary hover-text-success text-capitalize"><a
                                             href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                     </h6>
@@ -333,11 +335,13 @@ if (isset($_POST['add'])) {
                                     Added Property</h4>
                                 <ul class="property_list_widget">
                                     <?php 
-								$query=mysqli_query($con,"SELECT * FROM `property_list` ORDER BY date DESC LIMIT 7");
+								$query=mysqli_query($con,"SELECT * FROM `property_list` WHERE approved=true ORDER BY date DESC LIMIT 2");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
-                                    <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                    <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
+                                            class="img-thumbnail img-fluid "
+                                            style="height:100px; width: 100px; object-fit:cover">
                                         <h6 class="text-secondary hover-text-success text-capitalize"><a
                                                 href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                         </h6>
