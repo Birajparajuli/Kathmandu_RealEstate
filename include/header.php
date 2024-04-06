@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <ul class="top-contact list-text-white  d-table">
-                        <li><a href="#"><i class="fas fa-envelope text-success mr-1"></i>realestateNepal@gmail.com</a>
+                        <li><a href="#"><i class="fas fa-envelope  mr-1"></i>realestateNepal@gmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -37,8 +37,8 @@
                                 class="navbar-toggler-icon"></span> </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-0">
-                                <li class="nav-item dropdown"> <a class="nav-link" href="index.php" role="button"
-                                        aria-haspopup="true" aria-expanded="false">Home</a></li>
+                                <!-- <li class="nav-item dropdown"> <a class="nav-link" href="index.php" role="button"
+                                        aria-haspopup="true" aria-expanded="false">Home</a></li> -->
                                 <li class="nav-item"> <a class="nav-link" href="property.php">Properties</a> </li>
                                 <li class="nav-item"> <a class="nav-link" href="agent.php">Agents</a> </li>
                                 <?php  if(isset($_SESSION['uemail']))

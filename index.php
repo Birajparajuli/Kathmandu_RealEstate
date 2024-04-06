@@ -15,9 +15,10 @@ include("config.php");
     <link rel="stylesheet" type="text/css" href="css/layerslider.css">
     <link rel="stylesheet" type="text/css" href="css/color.css" id="color-change">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Unlock Your Dream Home in Kathmandu</title>
 </head>
 
@@ -34,7 +35,7 @@ include("config.php");
                     <div class="row h-100 align-items-center">
                         <div class="col-lg-12">
                             <div class="text-white">
-                                <h1 class="mb-5 text-center">Find Your Perfect Property</h1>
+                                <h1 class="mb-5 text-center">Find Your Perfect Home</h1>
                                 <form method="post" action="propertygrid.php">
                                     <div class="row">
                                         <div class="col-md-6 col-lg-2">
@@ -108,21 +109,21 @@ include("config.php");
                                                 <div class=" shadow-one">
                                                     <div class="p-3">
                                                         <h5
-                                                            class="text-secondary hover-text-success mb-2 text-capitalize">
+                                                            class="text-secondary hover-text-primary mb-2 text-capitalize">
                                                             <a
                                                                 href="propertydetail.php?pid=<?php echo $row['id'];?>"><?php echo $row['ad_title'];?></a>
                                                         </h5>
                                                         <span class="location text-capitalize"><i
-                                                                class="fa fa-map-marker-alt text-success"></i>
+                                                                class="fas fa-map-marker-alt text-primary"></i>
                                                             <?php echo $row['main_location'];?></span>
                                                     </div>
 
                                                     <div class="p-4 d-inline-block w-100">
                                                         <div class="float-left text-capitalize"><i
-                                                                class="fas fa-user text-success mr-1"></i>By :
+                                                                class="fas fa-user text-primary mr-1"></i>By :
                                                             <?php echo $row['uname'];?></div>
                                                         <div class="float-right"><i
-                                                                class="far fa-calendar-alt text-success mr-1"></i>
+                                                                class="far fa-calendar-alt text-primary mr-1"></i>
                                                             <?php echo date('d-m-Y', strtotime($row['date']));?></div>
                                                     </div>
                                                 </div>

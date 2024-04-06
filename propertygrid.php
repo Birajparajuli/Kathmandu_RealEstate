@@ -77,7 +77,8 @@ include("config.php");
                                 <div class="col-md-6">
                                     <div class="featured-thumb hover-zoomer mb-4">
                                         <div class="overlay-black overflow-hidden position-relative"> <img
-                                                src="admin/property/<?php echo $row['image1'];?>" alt="pimage">
+                                                src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
+                                                class=" img-fluid " style="height:300px; object-fit:cover">
                                             <div class="sale bg-primary text-white">For <?php echo $row['sale_rent'];?>
                                             </div>
                                             <div class="price text-primary text-capitalize">रु.

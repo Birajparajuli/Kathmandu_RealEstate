@@ -11,6 +11,9 @@ if(!isset($_SESSION['uemail']))
 
 $error="";
 $msg="";
+
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $uid=$_SESSION['uid'];
     $ad_title = $_POST['ad_title'];
@@ -58,13 +61,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	
 
     // Prepare and bind SQL statement
-    $stmt = mysqli_prepare($con, "INSERT INTO property_list (id, ad_title, category, sale_rent, no_of_flat, bedroom, bathroom, living, kitchen, all_rooms, parking, built_year, built_area, road_size, land_space, direction, price, price_per_unit, description, state, district, municipality, main_location, ward_no, tole, image1, image2, image3, image4, google_map, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+    $stmt = mysqli_prepare($con, "INSERT INTO property_list (uid, ad_title, category, sale_rent, no_of_flat, bedroom, bathroom, living, kitchen, all_rooms, parking, built_year, built_area, road_size, land_space, direction, price, price_per_unit, description, state, district, municipality, main_location, ward_no, tole, image1, image2, image3, image4, google_map, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
     if ($stmt === false) {
         $error="<p class='alert alert-warning'>Property Not Inserted Some Error</p>";
         die('Error preparing statement: ' . mysqli_error($con));
     }
     
-    mysqli_stmt_bind_param($stmt, "isssiiiiiisssssssssssssssssssss",$uid, $ad_title, $category, $sale_rent, $no_of_flat, $bedroom, $bathroom, $living, $kitchen, $all_rooms, $parking, $built_year, $built_area, $road_size, $land_space, $direction, $price, $price_per_unit, $description, $state, $district, $municipality, $main_location, $ward_no, $tole, $image1,$image2, $image3, $image4, $google_map, $status);
+    mysqli_stmt_bind_param($stmt, "isssiiiiiisssssssssssssssssssss", $uid, $ad_title, $category, $sale_rent, $no_of_flat, $bedroom, $bathroom, $living, $kitchen, $all_rooms, $parking, $built_year, $built_area, $road_size, $land_space, $direction, $price, $price_per_unit, $description, $state, $district, $municipality, $main_location, $ward_no, $tole, $image1,$image2, $image3, $image4, $google_map, $status);
    
     // Execute the statement
     mysqli_stmt_execute($stmt);
