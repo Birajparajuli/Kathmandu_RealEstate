@@ -93,11 +93,11 @@ if(isset($_REQUEST['login']))
                                     <form method="post">
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control"
-                                                placeholder="Your Email*">
+                                                placeholder="Your Email*" required>
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="pass" value="" class="form-control"
-                                                placeholder="Your Password">
+                                                placeholder="Your Password" minlength="8" required>
                                         </div>
                                         <button class="btn btn-primary btn-custom" name="login" value="Login"
                                             type="submit">Login</button>
@@ -106,15 +106,7 @@ if(isset($_REQUEST['login']))
                                         <span class="or-line"></span>
                                         <span class="span-or">or</span>
                                     </div>
-                                    <!-- Social Login -->
-                                    <!-- <div class="social-login">
-									<span>Login with</span>
-									<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="google"><i class="fab fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fab fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
-								</div> -->
-                                    <!-- /Social Login -->
+
                                     <div class="text-center dont-have">Don't have an account? <a
                                             href="register.php">Register</a></div>
                                 </div>

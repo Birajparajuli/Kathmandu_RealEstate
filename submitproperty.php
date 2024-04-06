@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="no_of_flat">No of Flat:</label>
-                                <input type="number" class="form-control" id="no_of_flat" name="no_of_flat">
+                                <input type="number" class="form-control" id="no_of_flat" name="no_of_flat" required>
                             </div>
                         </div>
                     </div>
@@ -171,13 +171,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="bedroom">Bedroom:</label>
-                                <input type="number" class="form-control" id="bedroom" name="bedroom">
+                                <input type="number" class="form-control" id="bedroom" name="bedroom" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="bathroom">Bathroom:</label>
-                                <input type="number" class="form-control" id="bathroom" name="bathroom">
+                                <input type="number" class="form-control" id="bathroom" name="bathroom" required>
                             </div>
                         </div>
                     </div>
@@ -185,13 +185,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="living">Living:</label>
-                                <input type="number" class="form-control" id="living" name="living">
+                                <input type="number" class="form-control" id="living" name="living" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="kitchen">Kitchen:</label>
-                                <input type="number" class="form-control" id="kitchen" name="kitchen">
+                                <input type="number" class="form-control" id="kitchen" name="kitchen" required>
                             </div>
                         </div>
                     </div>
@@ -199,7 +199,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="all_rooms">All Rooms:</label>
-                                <input type="number" class="form-control" id="all_rooms" name="all_rooms">
+                                <input type="number" class="form-control" id="all_rooms" name="all_rooms" required>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -221,13 +221,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="built_year">Built Year:</label>
-                                <input type="text" class="form-control" id="built_year" name="built_year">
+                                <input type="text" class="form-control" id="built_year" name="built_year"
+                                    placeholder="2078">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="built_area">Built Area:</label>
-                                <input type="text" class="form-control" id="built_area" name="built_area">
+                                <input type="text" class="form-control" id="built_area" name="built_area"
+                                    placeholder="4 aana / 1280 sqft">
                             </div>
                         </div>
                     </div>
@@ -235,13 +237,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="road_size">Road Size:</label>
-                                <input type="text" class="form-control" id="road_size" name="road_size">
+                                <input type="text" class="form-control" list="road_size" name="road_size">
+                                <datalist id="road_size">
+                                    <option value="4ft">4ft</option>
+                                    <option value="6ft">6ft</option>
+                                    <option value="8ft">8ft</option>
+                                    <option value="10ft">10ft</option>
+                                    <option value="12ft">12ft</option>
+                                    <option value="13ft">13ft</option>
+                                    <option value="14ft">14ft</option>
+                                    <option value="15ft">15ft</option>
+
+                                </datalist>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="land_space">Land/Space:</label>
-                                <input type="text" class="form-control" id="land_space" name="land_space">
+                                <input type="text" class="form-control" id="land_space" name="land_space"
+                                    placeholder="4 aana / 1280 sqft">
                             </div>
                         </div>
                     </div>
@@ -249,13 +263,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="direction">Direction:</label>
-                                <input type="text" class="form-control" id="direction" name="direction">
+                                <input type="text" class="form-control" list="direction" name="direction">
+                                <datalist id="direction">
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                    <option value="North">North</option>
+                                    <option value="South">South</option>
+                                    <option value="North East">North East</option>
+                                    <option value="South East">South East</option>
+                                    <option value="South West">South West</option>
+                                    <option value="North West">North West</option>
+                                </datalist>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="price">Price:</label>
-                                <input type="text" class="form-control" id="price" name="price">
+                                <label for="price">Price(RS):</label>
+                                <input type="text" class="form-control" id="price" name="price" placeholder="28500000">
                             </div>
                         </div>
                     </div>
@@ -316,7 +340,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="ward_no">Ward No:</label>
-                                <input type="text" class="form-control" id="ward_no" name="ward_no">
+                                <input type="number" class="form-control" id="ward_no" name="ward_no">
                             </div>
                         </div>
                         <div class="col-md-4">

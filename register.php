@@ -116,7 +116,7 @@ if(isset($_REQUEST['reg']))
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="pass" class="form-control"
-                                                placeholder="Your Password*">
+                                                placeholder="Your Password*" minlength="8" required>
                                         </div>
                                         <div class="form-check-inline">
                                             <label class="form-check-label">
@@ -146,15 +146,7 @@ if(isset($_REQUEST['reg']))
                                         <span class="or-line"></span>
                                         <span class="span-or">or</span>
                                     </div>
-                                    <!-- Social Login -->
-                                    <!-- <div class="social-login">
-									<span>Register with</span>
-									<a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-									<a href="#" class="google"><i class="fab fa-google"></i></a>
-									<a href="#" class="facebook"><i class="fab fa-twitter"></i></a>
-									<a href="#" class="google"><i class="fab fa-instagram"></i></a>
-								</div> -->
-                                    <!-- /Social Login -->
+
                                     <div class="text-center dont-have">Already have an account? <a
                                             href="login.php">Login</a></div>
                                 </div>

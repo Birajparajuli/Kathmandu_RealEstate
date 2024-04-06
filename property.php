@@ -39,7 +39,7 @@ include("config.php");
                         <div class="col-lg-8">
                             <div class="row">
                                 <?php 
-							$query=mysqli_query($con,"SELECT property_list.*, user.uname,user.utype,user.uimage FROM `property_list`,`user` WHERE property_list.uid=user.uid");
+							$query=mysqli_query($con,"SELECT property_list.*, user.uname,user.utype,user.uimage FROM `property_list`,`user` WHERE property_list.uid=user.uid AND approved=true");
 								while($row=mysqli_fetch_array($query))
 								{
 							?>
@@ -97,11 +97,11 @@ include("config.php");
                                 Property</h4>
                             <ul class="property_list_widget">
                                 <?php 
-                            $query=mysqli_query($con,"SELECT * FROM `property_list` WHERE is_featured = 1 ORDER BY date DESC LIMIT 3");
+                            $query=mysqli_query($con,"SELECT * FROM `property_list` WHERE is_featured = 1 AND approved=true ORDER BY date DESC LIMIT 3");
                                     while($row=mysqli_fetch_array($query))
                                     {
                             ?>
-                                <li> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
+                                <li class="mb-8"> <img src="admin/property/<?php echo $row['image1'];?>" alt="pimage"
                                         class="img-thumbnail img-fluid "
                                         style="height:100px; width: 100px; object-fit:cover">
                                     <h6 class="text-secondary hover-text-success text-capitalize"><a
@@ -117,7 +117,7 @@ include("config.php");
                                     Added Property</h4>
                                 <ul class="property_list_widget">
                                     <?php 
-								$query=mysqli_query($con,"SELECT * FROM `property_list` ORDER BY date DESC LIMIT 2");
+								$query=mysqli_query($con,"SELECT * FROM `property_list` WHERE approved=true ORDER BY date DESC LIMIT 2");
 										while($row=mysqli_fetch_array($query))
 										{
 								?>
