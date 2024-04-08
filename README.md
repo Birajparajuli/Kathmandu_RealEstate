@@ -24,3 +24,5 @@ Built using PHP, MySQL, and Bootstrap, Kathmandu Real Estate Marketplace offers 
 
     Username: admin
     Passoword: 12345678
+
+![](images/logo/white-logo.png)
